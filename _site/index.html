@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Wa public documentation : Style guide and public documentation for the new White Album platform" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Style Guide</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="project_title">Style Guide</h1>
+        <h2 id="project_tagline">Style guide and public documentation for the new White Album platform</h2>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        
+        <hr />
+<h2 id="introduction">Introduction</h2>
+
+<p>This document describes the overall design patterns of the White Album (WA) platform. White Album is a “white label” CMS that Benjamin Media sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.</p>
+
+<p>External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.</p>
+
+<h3 id="overall_patterns">Overall patterns</h3>
+
+<p>The platform is made fully responsive enabled by the Twitter Bootstrap CSS-framework <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>. The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.</p>
+
+<p>The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.</p>
+
+<p><img src="/images/fullwidth.jpg" alt="Horisontal Ordering" /></p>
+
+<p>Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.</p>
+
+<h3 id="header__footer">Header &amp; footer</h3>
+
+<p>The WA header and footer, which may be imported on external sites, consists of… A full width banner and optional side banners (horseshoe) The brand logo - as default it will be placed to the left</p>
+
+<ul>
+<li>magazine subscription offer to the right</li>
+
+<li>navigation menu with dropdown submenu</li>
+
+<li>footer containing background information about the publisher and links to related sites</li>
+</ul>
+
+<h3 id="header">Header:</h3>
+
+<p><img src="/images/header.png" alt="Horisontal Ordering" /></p>
+
+<h3 id="footer">Footer:</h3>
+
+<p><img src="/images/footer.png" alt="Horisontal Ordering" /></p>
+
+<h3 id="your_area_of_control">Your area of control:</h3>
+
+<p><img src="/images/areaofcontrol.jpg" alt="Horisontal Ordering" /></p>
+
+<h4 id="navigation">Navigation</h4>
+
+<p>The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.</p>
+
+<p>The navigation will fixate itself to the top of the screen when the user scrolls down the site.</p>
+
+<h4 id="included_in_">Included in <code>&lt;head&gt;</code></h4>
+
+<p>WA uses the HTML5 doctype:</p>
+<div class='highlight'><pre><code class='html'>  <span class='cp'>&lt;!DOCTYPE html&gt;</span>
+</code></pre></div>
+<p>The <code>&lt;head&gt;</code> will further include :</p>
+
+<ul>
+<li>Twitter Bootstrap</li>
+
+<li>jQuery v. 1.10.2</li>
+
+<li>Font Awesome</li>
+
+<li>Relevant meta tags:</li>
+</ul>
+<div class='highlight'><pre><code class='html'>  <span class='nt'>&lt;meta</span> <span class='na'>charset=</span><span class='s'>&quot;utf-8&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;meta</span> <span class='na'>name=</span><span class='s'>&quot;viewport&quot;</span> <span class='na'>content=</span><span class='s'>&quot;width=device-width, initial-scale=1;&quot;</span><span class='nt'>&gt;</span>
+</code></pre></div>
+<h3 id="bootstrap">Bootstrap</h3>
+
+<p>WA is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
+
+<p>WA does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included and used throughout the White Album platform:</p>
+
+<ul>
+<li>mixins</li>
+
+<li>normalize</li>
+
+<li>print</li>
+
+<li>scaffolding</li>
+
+<li>type</li>
+
+<li>code</li>
+
+<li>grid</li>
+
+<li>tables</li>
+
+<li>forms</li>
+
+<li>buttons</li>
+
+<li>pagination</li>
+
+<li>pager</li>
+
+<li>labels</li>
+
+<li>list-group</li>
+
+<li>panels</li>
+
+<li>component-animations</li>
+
+<li>alerts</li>
+
+<li>utilities</li>
+
+<li>responsive-utilities</li>
+</ul>
+
+<p>See the full list of available Bootstrap elements <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">here</a>, and let us know if you think something more should be included</p>
+
+<h3 id="grid">Grid</h3>
+
+<p>The WA platform uses the 12 column responsive grid provided by Bootstrap.</p>
+
+<p>The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). In most cases these breakpoints will be effectuated as follows:</p>
+
+<ul>
+<li>xs: smartphone</li>
+
+<li>sm: tablet portrait</li>
+
+<li>md: 13” laptop</li>
+
+<li>lg: desktop</li>
+</ul>
+
+<p>Note that Bootstrap is a Mobile First framework meaning that the xs-breakpoint is the default. This means that media query exceptions should be applied to the larger representations and not the other way around.</p>
+
+<p>See the Bootstrap documentation on how to use the <a href="http://getbootstrap.com/css/#grid">grid classes</a></p>
+
+<h3 id="widgets">Widgets</h3>
+
+<p>Widgets form a central part on the WA platform as modules that can be placed around the site and on front pages.</p>
+
+<p>Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.</p>
+
+<p>Use the <code>.widget</code> class on all modules, which includes the container class and a white background color.</p>
+
+<p><strong>Example:</strong></p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;widget widget-rotator&#39;</span><span class='nt'>&gt;</span>
+  <span class='c'>&lt;!-- HTML code that displays a rotator --&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div><div class='highlight'><pre><code class='css'><span class='nc'>.widget-rotator</span> <span class='p'>{}</span>
+</code></pre></div>
+<h3 id="headers_and_copy">Headers and copy</h3>
+
+<p>Keep a clear hierarchy between different headers and copy. Each brand has a standard font that should be used on extensions as well to keep consistency.</p>
+
+<p>The base font of copy is 16px and uses absolute pixel sizes (not ems or pt).</p>
+
+<p>Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and copy:</p>
+
+<p><strong>Headers:</strong></p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.header-primary</span>
+<span class='nc'>.header-secondary</span>
+<span class='nc'>.header-tertiary</span>
+<span class='nc'>.header-quaternary</span>
+</code></pre></div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;h1</span> <span class='na'>class=</span><span class='s'>”header-primary”</span><span class='nt'>&gt;</span>A primary headline<span class='nt'>&lt;/h1&gt;</span>
+<span class='nt'>&lt;p&gt;</span>Some text<span class='nt'>&lt;/p&gt;</span>
+<span class='nt'>&lt;h2</span> <span class='na'>class=</span><span class='s'>”header-primary”</span><span class='nt'>&gt;</span>A semantically secondary headline, that visually looks the same as a primary headline<span class='nt'>&lt;/h2&gt;</span>
+</code></pre></div>
+<p><strong>Copy:</strong></p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.copy</span>
+<span class='nc'>.copy-distinct</span> <span class='o'>//</span><span class='nt'>standard</span> <span class='nt'>bold</span> <span class='nt'>copy</span>
+<span class='nc'>.copy-tiny</span> <span class='o'>//</span><span class='nt'>small</span> <span class='nt'>copy</span>
+<span class='nc'>.copy-note</span> <span class='o'>//</span><span class='nt'>small</span> <span class='nt'>italic</span> <span class='nt'>copy</span>
+</code></pre></div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”copy”</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;h2&gt;</span>My headline<span class='nt'>&lt;/h2&gt;</span>
+  <span class='nt'>&lt;p&gt;</span>Text inserted by a WYSIWYG editor<span class='nt'>&lt;/p&gt;</span>
+  <span class='nt'>&lt;blockquote&gt;</span>Which is neatly formatted to the look and feel of an article<span class='nt'>&lt;/blockquote&gt;</span>
+  <span class='nt'>&lt;p&gt;</span>The .copy tag makes sure that all that user submitted content looks good even though the HTML code might not be.<span class='nt'>&lt;/p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div>
+<h3 id="colors">Colors</h3>
+
+<p>Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.</p>
+
+<p>The main color palette of a white label site is grayscale - only exceptions are alerts and signal colors.</p>
+
+<p>The main colors of a site can be applied using the following classes:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.brand-color</span> <span class='o'>//</span><span class='nt'>text</span> <span class='nt'>color</span>
+<span class='nc'>.brand-color-bg</span> <span class='o'>//</span><span class='nt'>background</span> <span class='nt'>color</span>
+
+<span class='nc'>.brand-danger</span>
+<span class='nc'>.brand-danger-bg</span>
+
+<span class='nc'>.brand-success</span>
+<span class='nc'>.brand-success-bg</span>
+
+<span class='nc'>.brand-warning</span>
+<span class='nc'>.brand-warning-bg</span>
+</code></pre></div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”brand-color-bg”</span><span class='nt'>&gt;</span>
+A container with the brand color as background
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div>
+<h3 id="css_misc_helper">CSS misc helper</h3>
+
+<h4 id="widget">Widget</h4>
+
+<p><code>.widget</code> use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”widget”</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”row”</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”col-md-12”</span><span class='nt'>&gt;</span>
+      Widget content
+    <span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;/div&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div>
+<h4 id="standard_helpers">Standard helpers</h4>
+
+<p>Simple helper classes that do what the title says:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.full-width</span>
+<span class='nc'>.max-full-width</span>
+<span class='nc'>.center</span>
+<span class='nc'>.relative</span>
+<span class='nc'>.float-left</span>
+<span class='nc'>.overflow-auto</span>
+</code></pre></div>
+<h4 id="bootstrap_related">Bootstrap related</h4>
+
+<p>These classes group Bootstrap’s responsive hidden-classes:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.hidden-xs-sm</span>
+<span class='nc'>.visible-xs-sm</span>
+<span class='nc'>.hidden-md-lg</span>
+<span class='nc'>.visible-md-lg</span>
+</code></pre></div>
+<p>Use them like Bootstrap’s <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utilities</a></p>
+
+<h4 id="gutters">Gutters</h4>
+
+<p>Use these gutter classes to add spacing between elements or to reset margin and padding on elements:</p>
+<div class='highlight'><pre><code class='css'><span class='c'>/* reset */</span>
+<span class='nc'>.gutter-reset</span>
+
+<span class='c'>/* vertical */</span>
+<span class='nc'>.gutter-vertical</span>
+<span class='nc'>.gutter-vertical-lg</span>
+<span class='nc'>.gutter-vertical-reset</span>
+
+<span class='c'>/* horisontal */</span>
+<span class='nc'>.gutter-horisontal</span>
+<span class='nc'>.gutter-horisontal-lg</span>
+<span class='nc'>.gutter-horisontal-reset</span>
+
+<span class='c'>/* top */</span>
+<span class='nc'>.gutter-top</span>
+<span class='nc'>.gutter-top-lg</span>
+<span class='nc'>.gutter-top-reset</span>
+
+<span class='c'>/* bottom */</span>
+<span class='nc'>.gutter-bottom</span>
+<span class='nc'>.gutter-bottom-lg</span>
+<span class='nc'>.gutter-bottom-reset</span>
+
+<span class='c'>/* right */</span>
+<span class='nc'>.gutter-right</span>
+
+<span class='c'>/* left */</span>
+<span class='nc'>.gutter-left</span>
+</code></pre></div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;h1</span> <span class='na'>class=</span><span class='s'>&#39;header-primary gutter-reset&#39;</span><span class='nt'>&gt;</span>
+  A header without margin or padding
+<span class='nt'>&lt;/h1&gt;</span>
+<span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;row gutter-top-lg&#39;</span><span class='nt'>&gt;</span>
+  Content with a large margin to the header above
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div>
+<h3 id="buttons">Buttons</h3>
+
+<p>Use the Bootstrap buttons when a link needs special attention:</p>
+
+<p>Button colors follow the overall site colors meaning that, for instance, the primary button has the primary brand color.</p>
+
+<p>See <a href="http://getbootstrap.com/css/#buttons">Bootstrap/buttons</a> about how to use</p>
+
+<h3 id="badges">Badges</h3>
+
+<p>Use the <code>.advertorial-stamp</code> class to add an advertorial badge on, for instance, the article lead image:</p>
+
+<p><img src="/images/advertorial.png" alt="advertorial" /></p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;bounding-box&#39;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;advertorial&#39;</span><span class='nt'>&gt;</span>ANNONCE<span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&#39;image.jpg &#39;</span><span class='na'>alt=</span><span class='s'>&#39;image name&#39;</span><span class='nt'>&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div>
+<h3 id="icons">Icons</h3>
+
+<p>Font Awesome is installed on WA. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.</p>
+
+<p>See <a href="http://fontawesome.io">Font Awesome</a> about how to use</p>
+
+<h3 id="forms">Forms</h3>
+
+<p>Use Bootstrap’s form classes to style forms: <a href="http://getbootstrap.com/css/#forms">http://getbootstrap.com/css/#forms</a></p>
+
+<p>Select the smallest height sizing class for input fields: <code>.input-sm</code></p>
+
+<p>Required form fields should always have a star * next to the title. On errors, place help text underneath the input box and a checkmark next to the input field - use <code>.brand-danger</code> or <code>.brand-success</code> to color these elements.</p>
+
+<p><img src="/images/forminput.png" alt="form" /></p>
+
+<h3 id="alerts">Alerts</h3>
+
+<p>Bootstrap provides a collection of alerts for user feedback messages . The colors follow the standard colors. Keep the base colors red, green and yellow, which may be toned to fit certain brand colors better.</p>
+
+<p>See <a href="http://getbootstrap.com/components/#alerts">Bootstrap/alerts</a> about how to use</p>
+
+<h3 id="brand_styling_skins">Brand styling (skins)</h3>
+
+<h5 id="woman">Woman</h5>
+
+<ul>
+<li>Main color: #CF0C56</li>
+
+<li>Secondary color: #292929</li>
+
+<li>Background color: #f8f8f8</li>
+
+<li>Main font: Raleway</li>
+
+<li>Secondary font: Old Standard TT</li>
+</ul>
+
+<h5 id="bobedre_dkno">Bobedre dk+no</h5>
+
+<ul>
+<li>Main color: #222222</li>
+
+<li>Secondary color: #DF6F06</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: Helvetica</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="bilmagasinet">Bilmagasinet</h5>
+
+<ul>
+<li>Main color: #c00c00</li>
+
+<li>Secondary color: #09729F</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: Arial</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="boligpluss">Boligpluss</h5>
+
+<ul>
+<li>Main color: #6b6496</li>
+
+<li>Secondary color: #c6c4dc</li>
+
+<li>Background color: #f0ede5</li>
+
+<li>Main font: Verdana</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="costume__streetstyle_dk">Costume + Streetstyle dk</h5>
+
+<ul>
+<li>Main color: #000000</li>
+
+<li>Secondary color: #f3a5a7</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: Lato</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="costume__streetstyle_no">Costume + Streetstyle no</h5>
+
+<ul>
+<li>Main color: #000000</li>
+
+<li>Secondary color: #f3a5a7</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: BrandonGrotesque</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="fhm">FHM</h5>
+
+<ul>
+<li>Main color: #920C15</li>
+
+<li>Secondary color: #2e629d</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: Trebuchet</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="magasinet_liv">Magasinet Liv</h5>
+
+<ul>
+<li>Main color: #000000</li>
+
+<li>Secondary color: #e40044</li>
+
+<li>Background: pattern image</li>
+
+<li>Main font: Droid Serif</li>
+
+<li>Secondary font: Droid Sans</li>
+</ul>
+
+<h5 id="m">M</h5>
+
+<ul>
+<li>Main color: #ea1d2c</li>
+
+<li>Secondary color: #000000</li>
+
+<li>Background color: #ededed</li>
+
+<li>Main font: Helvetica</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="penge">Penge</h5>
+
+<ul>
+<li>Main color: #c00c00</li>
+
+<li>Secondary color: #f5f5f5</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: Arial</li>
+
+<li>Secondary font: none</li>
+</ul>
+
+<h5 id="stella">Stella</h5>
+
+<ul>
+<li>Main color: #333333</li>
+
+<li>Secondary color: #E25B82</li>
+
+<li>Background color: #ffffff</li>
+
+<li>Main font: Droid Serif</li>
+
+<li>Secondary font: Questrial</li>
+</ul>
+
+<h5 id="tara">Tara</h5>
+
+<ul>
+<li>Main color: #82002d</li>
+
+<li>Secondary color: #E25B82</li>
+
+<li>Background color: #fefefe</li>
+
+<li>Main font: Tahoma</li>
+
+<li>Secondary font: None</li>
+</ul>
+    </div>
+
+  </body>
+</html>
