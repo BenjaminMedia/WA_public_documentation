@@ -13,7 +13,7 @@ The responsive sites follow the Mobile First paradigm meaning that the mobile ad
 
 The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.
 
-![Horisontal Ordering](/images/fullwidth.jpg)
+![Horisontal Ordering](http://benjaminmedia.github.io/WA_public_documentation/images/fullwidth.jpg)
 
 Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
 
@@ -28,13 +28,13 @@ The brand logo - as default it will be placed to the left
 * footer containing background information about the publisher and links to related sites
 
 ### Header:
-![Horisontal Ordering](/images/header.png)
+![Horisontal Ordering](http://benjaminmedia.github.io/WA_public_documentation/images/header.png)
 
 ### Footer:
-![Horisontal Ordering](/images/footer.png)
+![Horisontal Ordering](http://benjaminmedia.github.io/WA_public_documentation/images/footer.png)
 
 ### Your area of control:
-![Horisontal Ordering](/images/areaofcontrol.jpg)
+![Horisontal Ordering](http://benjaminmedia.github.io/WA_public_documentation/images/areaofcontrol.jpg)
 
 #### Navigation
 
@@ -294,7 +294,7 @@ See [Bootstrap/buttons](http://getbootstrap.com/css/#buttons) about how to use
 ### Badges
 Use the `.advertorial-stamp` class to add an advertorial badge on, for instance, the article lead image:
 
-![advertorial](/images/advertorial.png)
+![advertorial](http://benjaminmedia.github.io/WA_public_documentation/images/advertorial.png)
 
 {% highlight html %}
 <div class='bounding-box'>
@@ -315,7 +315,7 @@ Select the smallest height sizing class for input fields: `.input-sm`
 
 Required form fields should always have a star * next to the title. On errors, place help text underneath the input box and a checkmark next to the input field - use `.brand-danger` or `.brand-success` to color these elements.
 
-![form](/images/forminput.png)
+![form](http://benjaminmedia.github.io/WA_public_documentation/images/forminput.png)
 
 ### Alerts
 Bootstrap provides a collection of alerts for user feedback messages . The colors follow the standard colors. Keep the base colors red, green and yellow, which may be toned to fit certain brand colors better.
