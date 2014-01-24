@@ -155,6 +155,7 @@ p img {
   padding: 0;
   vertical-align: middle;
   text-align: center;
+  max-width: 100%;
 }
 
 pre, code {
@@ -171,8 +172,8 @@ pre, code {
 }
 
 pre {
-  width: 100%;
-  padding: 10px;
+  width: 96%;
+  padding: 2%;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
   overflow: auto;
 }
