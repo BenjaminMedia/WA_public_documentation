@@ -13,7 +13,7 @@ The responsive sites follow the Mobile First paradigm meaning that the mobile ad
 
 The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.
 
-![Horisontal Ordering](/images/fullwidth.jpg)
+![Horisontal Ordering](images/fullwidth.jpg)
 
 Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
 
