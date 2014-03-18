@@ -12,7 +12,9 @@ title: Style Guide
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Wa public documentation : Style guide and public documentation for the new White Album platform" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://whitealbum-staging-frontend.herokuapp.com/assets/woman-8a6fb9eb0f662b75de74ea36bf5849d4.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/custom.css">
 
     <title>{{ page.title }}</title>
   </head>
@@ -29,11 +31,91 @@ title: Style Guide
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
+      <nav class="navigation inner">
+        <ul>
+          <li>
+            <a href="#introduction">INTRODUCTION</a>
+          </li>
+          <li>
+            <a href="#visual_patterns">VISUAL PATTERNS</a>
+          </li>
+          <li>
+            <a href="#header__footer">Header & footer</a>
+          </li>
+          <li>
+            <a href="#navigation">Navigation</a>
+          </li>
+          <li>
+            <a href="#included_in_">INCLUDED IN HEAD</a>
+          </li>
+          <li>
+            <a href="#bootstrap">BOOTSTRAP</a>
+          </li>
+          <li>
+            <a href="#grid">Grid</a>
+          </li>
+          <li>
+            <a href="#buttons">Buttons</a>
+          </li>
+          <li>
+            <a href="#forms">Forms</a>
+          </li>
+          <li>
+            <a href="#alerts">Alerts</a>
+          </li>
+          <li>
+            <a href="#icons">Icons</a>
+          </li>
+          <li>
+            <a href="#css_helpers">CSS HELPERS</a>
+          </li>
+          <li>
+            <a href="#headers_and_copy">Headers and copy</a>
+          </li>
+          <li>
+            <a href="#colors">Colors</a>
+          </li>
+          <li>
+            <a href="#widgets">Widgets</a>
+          </li>
+          <li>
+            <a href="#badges">Badges</a>
+          </li>
+          <li>
+            <a href="#bootstrap_related">Bootstrap related</a>
+          </li>
+          <li>
+            <a href="#gutters">Gutters</a>
+          </li>
+          <li>
+            <a href="#misc_helpers">Misc helpers</a>
+          </li>
+          <li>
+            <a href="#brand_styling_skins">BRAND STYLING</a>
+          </li>
+          <li>
+            <a href="#javascript">JAVASCRIPT</a>
+          </li>
+          <li>
+            <a href="#data_attributes">Data attributes</a>
+          </li>
+          <li>
+            <a href="#testing">Plugins</a>
+          </li>
+          <li>
+            <a href="#testing">Testing</a>
+          </li>
+          <li>
+            <a href="#components">Components</a>
+          </li>
+        </ul>
+      </nav>
       <section id="main_content" class="inner">
         {% capture converted %}
           {% include content.md %}
         {% endcapture %}
         {{ converted | markdownify }}
+      </section>
     </div>
 
   </body>
