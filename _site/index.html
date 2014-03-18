@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Wa public documentation : Style guide and public documentation for the new White Album platform" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://whitealbum-staging-frontend.herokuapp.com/assets/woman-8a6fb9eb0f662b75de74ea36bf5849d4.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/custom.css">
 
     <title>Style Guide</title>
   </head>
@@ -23,6 +25,85 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
+      <nav class="navigation inner">
+        <ul>
+          <li>
+            <a href="#introduction">INTRODUCTION</a>
+          </li>
+          <li>
+            <a href="#visual_patterns">VISUAL PATTERNS</a>
+          </li>
+          <li>
+            <a href="#header__footer">Header & footer</a>
+          </li>
+          <li>
+            <a href="#navigation">Navigation</a>
+          </li>
+          <li>
+            <a href="#included_in_">INCLUDED IN HEAD</a>
+          </li>
+          <li>
+            <a href="#bootstrap">BOOTSTRAP</a>
+          </li>
+          <li>
+            <a href="#grid">Grid</a>
+          </li>
+          <li>
+            <a href="#buttons">Buttons</a>
+          </li>
+          <li>
+            <a href="#forms">Forms</a>
+          </li>
+          <li>
+            <a href="#alerts">Alerts</a>
+          </li>
+          <li>
+            <a href="#icons">Icons</a>
+          </li>
+          <li>
+            <a href="#css_helpers">CSS HELPERS</a>
+          </li>
+          <li>
+            <a href="#headers_and_copy">Headers and copy</a>
+          </li>
+          <li>
+            <a href="#colors">Colors</a>
+          </li>
+          <li>
+            <a href="#widgets">Widgets</a>
+          </li>
+          <li>
+            <a href="#badges">Badges</a>
+          </li>
+          <li>
+            <a href="#bootstrap_related">Bootstrap related</a>
+          </li>
+          <li>
+            <a href="#gutters">Gutters</a>
+          </li>
+          <li>
+            <a href="#misc_helpers">Misc helpers</a>
+          </li>
+          <li>
+            <a href="#brand_styling_skins">BRAND STYLING</a>
+          </li>
+          <li>
+            <a href="#javascript">JAVASCRIPT</a>
+          </li>
+          <li>
+            <a href="#data_attributes">Data attributes</a>
+          </li>
+          <li>
+            <a href="#testing">Plugins</a>
+          </li>
+          <li>
+            <a href="#testing">Testing</a>
+          </li>
+          <li>
+            <a href="#components">Components</a>
+          </li>
+        </ul>
+      </nav>
       <section id="main_content" class="inner">
         
         <hr />
@@ -32,13 +113,13 @@
 
 <p>External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.</p>
 
-<h3 id="overall_patterns">Overall patterns</h3>
+<h3 id="visual_patterns">Visual patterns</h3>
 
 <p>The platform is made fully responsive enabled by the Twitter Bootstrap CSS-framework <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>. The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.</p>
 
 <p>The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.</p>
 
-<p><img src="/images/fullwidth.jpg" alt="Horisontal Ordering" /></p>
+<p><img src="images/fullwidth.jpg" alt="Horisontal Ordering" /></p>
 
 <p>Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.</p>
 
@@ -56,15 +137,15 @@
 
 <h3 id="header">Header:</h3>
 
-<p><img src="http://benjaminmedia.github.io/WA_public_documentation/images/header.png" alt="Horisontal Ordering" /></p>
+<p><img src="images/header.png" alt="Horisontal Ordering" /></p>
 
 <h3 id="footer">Footer:</h3>
 
-<p><img src="http://benjaminmedia.github.io/WA_public_documentation/images/footer.png" alt="Horisontal Ordering" /></p>
+<p><img src="images/footer.png" alt="Horisontal Ordering" /></p>
 
 <h3 id="your_area_of_control">Your area of control:</h3>
 
-<p><img src="http://benjaminmedia.github.io/WA_public_documentation/images/areaofcontrol.jpg" alt="Horisontal Ordering" /></p>
+<p><img src="images/areaofcontrol.jpg" alt="Horisontal Ordering" /></p>
 
 <h4 id="navigation">Navigation</h4>
 
@@ -72,7 +153,7 @@
 
 <p>The navigation will fixate itself to the top of the screen when the user scrolls down the site.</p>
 
-<h4 id="included_in_">Included in <code>&lt;head&gt;</code></h4>
+<h3 id="included_in_">Included in <code>&lt;head&gt;</code></h3>
 
 <p>WA uses the HTML5 doctype:</p>
 <div class='highlight'><pre><code class='html'>  <span class='cp'>&lt;!DOCTYPE html&gt;</span>
@@ -139,7 +220,7 @@
 
 <p>See the full list of available Bootstrap elements <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">here</a>, and let us know if you think something more should be included</p>
 
-<h3 id="grid">Grid</h3>
+<h4 id="grid">Grid</h4>
 
 <p>The WA platform uses the 12 column responsive grid provided by Bootstrap.</p>
 
@@ -159,20 +240,38 @@
 
 <p>See the Bootstrap documentation on how to use the <a href="http://getbootstrap.com/css/#grid">grid classes</a></p>
 
-<h3 id="widgets">Widgets</h3>
+<h3 id="buttons">Buttons</h3>
 
-<p>Widgets form a central part on the WA platform as modules that can be placed around the site and on front pages.</p>
+<p>Use the Bootstrap buttons when a link needs special attention:</p>
 
-<p>Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.</p>
+<p>Button colors follow the overall site colors meaning that, for instance, the primary button has the primary brand color.</p>
 
-<p>Use the <code>.widget</code> class on all modules, which includes the container class and a white background color.</p>
+<p>See <a href="http://getbootstrap.com/css/#buttons">Bootstrap/buttons</a> about how to use</p>
 
-<p><strong>Example:</strong></p>
-<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;widget widget-rotator&#39;</span><span class='nt'>&gt;</span>
-  <span class='c'>&lt;!-- HTML code that displays a rotator --&gt;</span>
-<span class='nt'>&lt;/div&gt;</span>
-</code></pre></div><div class='highlight'><pre><code class='css'><span class='nc'>.widget-rotator</span> <span class='p'>{}</span>
-</code></pre></div>
+<p>For facebook buttons, use the class <code>.btn-facebook</code> :</p>
+
+<p><button class='btn-facebook'>Login med facebook</button></p>
+
+<h3 id="forms">Forms</h3>
+
+<p>Use Bootstrap’s form classes to style forms: <a href="http://getbootstrap.com/css/#forms">http://getbootstrap.com/css/#forms</a></p>
+
+<p>Select the smallest height sizing class for input fields: <code>.input-sm</code></p>
+
+<h3 id="alerts">Alerts</h3>
+
+<p>Bootstrap provides a collection of alerts for user feedback messages . Use the standard colors described in the <a href="#colors">colors section</a>.</p>
+
+<p>See <a href="http://getbootstrap.com/components/#alerts">Bootstrap/alerts</a> about how to use</p>
+
+<h3 id="icons">Icons</h3>
+
+<p>Font Awesome is installed on WA. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.</p>
+
+<p>See <a href="http://fontawesome.io">Font Awesome</a> about how to use</p>
+
+<h3 id="css_helpers">CSS HELPERS</h3>
+
 <h3 id="headers_and_copy">Headers and copy</h3>
 
 <p>Keep a clear hierarchy between different headers and copy. Each brand has a standard font that should be used on extensions as well to keep consistency.</p>
@@ -182,7 +281,7 @@
 <p>Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and copy:</p>
 
 <p><strong>Headers:</strong></p>
-<div class='highlight'><pre><code class='css'><span class='nc'>.header-primary</span>
+<h1 class='header-primary'>Header-primary</h1><h1 class='header-secondary'>Header-secondary</h1><h1 class='header-tertiary'>Header-tertiary</h1><h1 class='header-quaternary'>Header-quaternary</h1><div class='highlight'><pre><code class='css'><span class='nc'>.header-primary</span>
 <span class='nc'>.header-secondary</span>
 <span class='nc'>.header-tertiary</span>
 <span class='nc'>.header-quaternary</span>
@@ -191,21 +290,25 @@
 <span class='nt'>&lt;h2</span> <span class='na'>class=</span><span class='s'>”header-primary”</span><span class='nt'>&gt;</span>A semantically secondary headline, that visually looks the same as a primary headline<span class='nt'>&lt;/h2&gt;</span>
 </code></pre></div>
 <p><strong>Copy:</strong></p>
-<div class='highlight'><pre><code class='css'><span class='nc'>.copy</span>
+<p class='copy'>Copy</p><p class='copy-distinct'>Copy-distinct</p><p class='copy-tiny'>Copy-tiny</p><p class='copy-note'>Copy-note</p><div class='highlight'><pre><code class='css'><span class='nc'>.copy</span>
 <span class='nc'>.copy-distinct</span> <span class='o'>//</span><span class='nt'>standard</span> <span class='nt'>bold</span> <span class='nt'>copy</span>
 <span class='nc'>.copy-tiny</span> <span class='o'>//</span><span class='nt'>small</span> <span class='nt'>copy</span>
 <span class='nc'>.copy-note</span> <span class='o'>//</span><span class='nt'>small</span> <span class='nt'>italic</span> <span class='nt'>copy</span>
-</code></pre></div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”copy”</span><span class='nt'>&gt;</span>
+</code></pre></div>
+<p><strong>Wysiwyg:</strong></p>
+
+<p>For wysiwyg generated copy wrap the content inside class <code>.wysiwyg</code></p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”wysiwyg”</span><span class='nt'>&gt;</span>
   <span class='nt'>&lt;h2&gt;</span>My headline<span class='nt'>&lt;/h2&gt;</span>
   <span class='nt'>&lt;p&gt;</span>Text inserted by a WYSIWYG editor<span class='nt'>&lt;/p&gt;</span>
   <span class='nt'>&lt;blockquote&gt;</span>Which is neatly formatted to the look and feel of an article<span class='nt'>&lt;/blockquote&gt;</span>
-  <span class='nt'>&lt;p&gt;</span>The .copy tag makes sure that all that user submitted content looks good even though the HTML code might not be.<span class='nt'>&lt;/p&gt;</span>
+  <span class='nt'>&lt;p&gt;</span>The .wysiwyg tag makes sure that all that user submitted content looks good even though the HTML code might not be.<span class='nt'>&lt;/p&gt;</span>
 <span class='nt'>&lt;/div&gt;</span>
 </code></pre></div>
 <h3 id="colors">Colors</h3>
 
 <p>Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.</p>
-
+<h4 class='brand-color'>Brand color</h4><h4 class='brand-success'>Brand success</h4><h4 class='brand-warning'>Brand warning</h4><h4 class='brand-danger'>Brand danger</h4>
 <p>The main color palette of a white label site is grayscale - only exceptions are alerts and signal colors.</p>
 
 <p>The main colors of a site can be applied using the following classes:</p>
@@ -224,9 +327,11 @@
 A container with the brand color as background
 <span class='nt'>&lt;/div&gt;</span>
 </code></pre></div>
-<h3 id="css_misc_helper">CSS misc helper</h3>
+<h4 id="widgets">Widgets</h4>
 
-<h4 id="widget">Widget</h4>
+<p>Widgets form a central part on the WA platform as modules that can be placed around the site and on front pages.</p>
+
+<p>Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.</p>
 
 <p><code>.widget</code> use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>”widget”</span><span class='nt'>&gt;</span>
@@ -237,15 +342,16 @@ A container with the brand color as background
   <span class='nt'>&lt;/div&gt;</span>
 <span class='nt'>&lt;/div&gt;</span>
 </code></pre></div>
-<h4 id="standard_helpers">Standard helpers</h4>
+<h3 id="badges">Badges</h3>
 
-<p>Simple helper classes that do what the title says:</p>
-<div class='highlight'><pre><code class='css'><span class='nc'>.full-width</span>
-<span class='nc'>.max-full-width</span>
-<span class='nc'>.center</span>
-<span class='nc'>.relative</span>
-<span class='nc'>.float-left</span>
-<span class='nc'>.overflow-auto</span>
+<p>Use the <code>.advertorial-stamp</code> class to add an advertorial badge on, for instance, the article lead image:</p>
+<div class='relative gutter-bottom'>
+  <div class='advertorial-stamp'>Badge</div>
+  <img src='http://placehold.it/640x450' />
+</div><div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;bounding-box&#39;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;advertorial-stamp&#39;</span><span class='nt'>&gt;</span>ANNONCE<span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&#39;image.jpg &#39;</span><span class='na'>alt=</span><span class='s'>&#39;image name&#39;</span><span class='nt'>&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
 </code></pre></div>
 <h4 id="bootstrap_related">Bootstrap related</h4>
 
@@ -295,46 +401,18 @@ A container with the brand color as background
   Content with a large margin to the header above
 <span class='nt'>&lt;/div&gt;</span>
 </code></pre></div>
-<h3 id="buttons">Buttons</h3>
+<h4 id="misc_helpers">Misc helpers</h4>
 
-<p>Use the Bootstrap buttons when a link needs special attention:</p>
-
-<p>Button colors follow the overall site colors meaning that, for instance, the primary button has the primary brand color.</p>
-
-<p>See <a href="http://getbootstrap.com/css/#buttons">Bootstrap/buttons</a> about how to use</p>
-
-<h3 id="badges">Badges</h3>
-
-<p>Use the <code>.advertorial-stamp</code> class to add an advertorial badge on, for instance, the article lead image:</p>
-
-<p><img src="http://benjaminmedia.github.io/WA_public_documentation/images/advertorial.png" alt="advertorial" /></p>
-<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;bounding-box&#39;</span><span class='nt'>&gt;</span>
-  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&#39;advertorial&#39;</span><span class='nt'>&gt;</span>ANNONCE<span class='nt'>&lt;/div&gt;</span>
-  <span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&#39;image.jpg &#39;</span><span class='na'>alt=</span><span class='s'>&#39;image name&#39;</span><span class='nt'>&gt;</span>
-<span class='nt'>&lt;/div&gt;</span>
+<p>Simple helper classes that do what the title says:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.full-width</span>
+<span class='nc'>.max-full-width</span>
+<span class='nc'>.center</span>
+<span class='nc'>.fixed-center</span>
+<span class='nc'>.relative</span>
+<span class='nc'>.float-left</span>
+<span class='nc'>.overflow-auto</span>
+<span class='nc'>.hide-bg</span>
 </code></pre></div>
-<h3 id="icons">Icons</h3>
-
-<p>Font Awesome is installed on WA. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.</p>
-
-<p>See <a href="http://fontawesome.io">Font Awesome</a> about how to use</p>
-
-<h3 id="forms">Forms</h3>
-
-<p>Use Bootstrap’s form classes to style forms: <a href="http://getbootstrap.com/css/#forms">http://getbootstrap.com/css/#forms</a></p>
-
-<p>Select the smallest height sizing class for input fields: <code>.input-sm</code></p>
-
-<p>Required form fields should always have a star * next to the title. On errors, place help text underneath the input box and a checkmark next to the input field - use <code>.brand-danger</code> or <code>.brand-success</code> to color these elements.</p>
-
-<p><img src="http://benjaminmedia.github.io/WA_public_documentation/images/forminput.png" alt="form" /></p>
-
-<h3 id="alerts">Alerts</h3>
-
-<p>Bootstrap provides a collection of alerts for user feedback messages . The colors follow the standard colors. Keep the base colors red, green and yellow, which may be toned to fit certain brand colors better.</p>
-
-<p>See <a href="http://getbootstrap.com/components/#alerts">Bootstrap/alerts</a> about how to use</p>
-
 <h3 id="brand_styling_skins">Brand styling (skins)</h3>
 
 <h5 id="woman">Woman</h5>
@@ -504,6 +582,105 @@ A container with the brand color as background
 
 <li>Secondary font: None</li>
 </ul>
+
+<h3 id="javascript">JavaScript</h3>
+
+<p>The White Album platform uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.</p>
+
+<h4 id="data_attributes">Data attributes</h4>
+
+<p>The White Album JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Markup:</p>
+<div class='highlight'><pre><code class='html'>  <span class='nt'>&lt;button</span> <span class='na'>data-toggle=</span><span class='s'>&quot;button&quot;</span><span class='nt'>&gt;</span>Button<span class='nt'>&lt;/button&gt;</span>
+</code></pre></div>
+<p>Javascript:</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;[data-toggle=&quot;button&quot;]&#39;</span><span class='p'>).</span><span class='nx'>on</span><span class='p'>(</span><span class='s1'>&#39;click&#39;</span><span class='p'>,</span> <span class='nx'>doSomething</span><span class='p'>);</span>
+</code></pre></div>
+<h4 id="plugins">Plugins</h4>
+
+<p>The White Album uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.</p>
+
+<p><strong>$.checkRegex</strong></p>
+
+<p>Simple frontend regex script that returns true or false. Use it like this: <code>$.checkRegex(stringToCheck, 'pattern');</code></p>
+
+<p>Available patterns: numberIncluded, onlyNumbers, onlyLetters, hasLetters, isEmail, isImage, onlySpaces</p>
+
+<p><strong>$.breakpoints</strong></p>
+
+<p>Checks the window width and returns the breakpoint as a string <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>. Use it as it is, e.g.:</p>
+<div class='highlight'><pre><code class='javascript'><span class='k'>if</span><span class='p'>(</span><span class='nx'>$</span><span class='p'>.</span><span class='nx'>breakpoint</span><span class='p'>()</span> <span class='o'>===</span> <span class='s1'>&#39;md&#39;</span><span class='p'>)</span> <span class='p'>{</span>
+  <span class='nx'>doSomething</span><span class='p'>();</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p><strong>$.isTouchDevice</strong></p>
+
+<p>Detects if the site is accessed with a touch device. Returns true/false</p>
+
+<p><strong>$.extractSuffix</strong></p>
+
+<p>Splits a filename and returns the suffix as a string. For instance: <code>$.extractSuffix('image.png')</code> returns <code>png</code>.</p>
+
+<h4 id="testing">Testing</h4>
+
+<p>All plugins are unit tested with <a href="http://jasmine.github.io/2.0/introduction.html">Jasmine.js</a>. The testing suite is only available internally, but we strongly encourage external developers to unit test scripts.</p>
+
+<h4 id="components">Components</h4>
+
+<p>White Album extends Bootstrap’s JavaScript components with a suite of features that can be initialized using data-attributes:</p>
+
+<p><strong>Image rotator</strong></p>
+
+<p>Easily create an image rotator by adding <code>data-component=&quot;rotator&quot;</code> to a set of images with the following structure:</p>
+<div class='highlight'><pre><code class='html'>  <span class='nt'>&lt;div</span> <span class='na'>data-component=</span><span class='s'>&quot;rotator&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;ul&gt;</span>
+      <span class='nt'>&lt;li&gt;</span>
+        <span class='nt'>&lt;figure&gt;</span>
+          <span class='nt'>&lt;figcaption&gt;</span>
+          <span class='nt'>&lt;/figcaption&gt;</span>
+        <span class='nt'>&lt;/figure&gt;</span>
+      <span class='nt'>&lt;/li&gt;</span>
+    <span class='nt'>&lt;/ul&gt;</span>
+  <span class='nt'>&lt;/div&gt;</span>
+</code></pre></div>
+<p><strong>Modal image</strong></p>
+
+<p>Toggle a large version of any image to open in a modal. Initiate with <code>data-toggle=&quot;modal-image&quot;</code>and provide a path to the the large scale image in <code>data-image-lg=&quot;image-url&quot;&gt;</code></p>
+
+<p>Example:</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&quot;image.jpg&quot;</span> <span class='na'>data-toggle=</span><span class='s'>&quot;modal-image&quot;</span> <span class='na'>data-image-lg=</span><span class='s'>&quot;image-large.jpg&quot;</span><span class='nt'>&gt;</span>
+</code></pre></div>
+<p><strong>Simple form validation</strong></p>
+
+<p>The simple form validation component is, as the title indicates, useful to validate small and simple forms. To use it, add <code>data-regex</code>with a pattern (see list below) and <code>data-error-msg</code> with an error message to the input field that needs checked. On the submit button add <code>data-toggle=&quot;check-regex&quot;</code>, and on the same DOM-level place a container with <code>data-toggle=&quot;alert-danger&quot;</code> to hold the error messages:</p>
+
+<p>Example:</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;form&gt;</span>
+  <span class='nt'>&lt;input</span>
+    <span class='na'>placeholder=</span><span class='s'>&quot;Telefonnummer&quot;</span>
+    <span class='na'>data-regex=</span><span class='s'>&quot;phone&quot;</span>
+    <span class='na'>data-error-msg=</span><span class='s'>&quot;Skal indeholde otte tal uden mellemrum&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;alert alert-danger&quot;</span> <span class='na'>data-toggle=</span><span class='s'>&quot;alert-danger&quot;</span><span class='nt'>&gt;&lt;/div&gt;</span>
+  <span class='nt'>&lt;input</span> <span class='na'>type=</span><span class='s'>&quot;submit&quot;</span> <span class='na'>value=</span><span class='s'>&quot;Submit&quot;</span> <span class='na'>data-toggle=</span><span class='s'>&quot;check-regex&quot;</span><span class='nt'>&gt;</span>
+<span class='nt'>&lt;/form&gt;</span>
+</code></pre></div>
+<p>Available patterns:</p>
+
+<p><code>data-regex=&quot;phone&quot;</code>: Checks if the input is a number of 8 digits without spaces</p>
+
+<p><code>data-regex=&quot;name&quot;</code>: Checks if the input only has letters</p>
+
+<p><code>data-regex=&quot;email&quot;</code>: Checks if the input is an email address</p>
+
+<p><code>data-regex=&quot;is-adult&quot;</code>: Checks the difference between the current year (2014) and the input year (e.g. 1984) and whether it’s more than 18 years ago</p>
+
+<p><strong>Tooltip</strong></p>
+
+<p>Initializes Bootstrap’s Tooltip plugin <code>$('[data-toggle=&quot;tooltip&quot;]').tooltip();</code></p>
+      </section>
     </div>
 
   </body>
