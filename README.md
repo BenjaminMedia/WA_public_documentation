@@ -11,11 +11,13 @@ Content is edited in the _includes/content.md as markdown. The Jekyll server wil
 
 Use Liquid highlight to style code
 
+```javascript
 {% highlight javascript %}
 
 //javascript code
 
 {% endhighlight %}
+````
 
 and Liquid raw to make untranslated code examples
 
