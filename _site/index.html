@@ -19,7 +19,7 @@
     <div id="header_wrap" class="outer">
       <header class="inner">
         <h1 id="project_title">Style Guide</h1>
-        <h2 id="project_tagline">Style guide and public documentation for the new White Album platform</h2>
+        <h2 id="project_tagline">Style guide and public documentation for web sites on the Bonnier Publications platform</h2>
       </header>
     </div>
 
@@ -109,13 +109,15 @@
         <hr />
 <h2 id="introduction">Introduction</h2>
 
-<p>This document describes the overall design patterns of the White Album (WA) platform. White Album is a “white label” CMS that Benjamin Media sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.</p>
+<p>This document describes the overall design patterns of the Bonnier Publications web site platform (BPP).</p>
+
+<p>The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BPP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.</p>
 
 <p>External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.</p>
 
 <h3 id="visual_patterns">Visual patterns</h3>
 
-<p>The platform is made fully responsive enabled by the Twitter Bootstrap CSS-framework <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>. The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.</p>
+<p>The platform is made fully responsive enabled by the <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>. The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.</p>
 
 <p>The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.</p>
 
@@ -151,11 +153,9 @@
 
 <p>The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.</p>
 
-<p>The navigation will fixate itself to the top of the screen when the user scrolls down the site.</p>
-
 <h3 id="included_in_">Included in <code>&lt;head&gt;</code></h3>
 
-<p>WA uses the HTML5 doctype:</p>
+<p>BPP uses the HTML5 doctype:</p>
 <div class='highlight'><pre><code class='html'>  <span class='cp'>&lt;!DOCTYPE html&gt;</span>
 </code></pre></div>
 <p>The <code>&lt;head&gt;</code> will further include :</p>
@@ -174,9 +174,9 @@
 </code></pre></div>
 <h3 id="bootstrap">Bootstrap</h3>
 
-<p>WA is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
+<p>BPP is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
 
-<p>WA does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included and used throughout the White Album platform:</p>
+<p>BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:</p>
 
 <ul>
 <li>mixins</li>
@@ -218,11 +218,11 @@
 <li>responsive-utilities</li>
 </ul>
 
-<p>See the full list of available Bootstrap elements <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">here</a>, and let us know if you think something more should be included</p>
+<p>See the full list of available Bootstrap elements <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">here</a>, and let us know if you think something is missing</p>
 
 <h4 id="grid">Grid</h4>
 
-<p>The WA platform uses the 12 column responsive grid provided by Bootstrap.</p>
+<p>The BPP platform uses the 12 column responsive grid provided by Bootstrap.</p>
 
 <p>The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). In most cases these breakpoints will be effectuated as follows:</p>
 
@@ -248,7 +248,7 @@
 
 <p>See <a href="http://getbootstrap.com/css/#buttons">Bootstrap/buttons</a> about how to use</p>
 
-<p>For facebook buttons, use the class <code>.btn-facebook</code> :</p>
+<p>The Bootstrap buttons have been extended with a facebook styled button enabled by class <code>.btn-facebook</code> :</p>
 
 <p><button class='btn-facebook'>Login med facebook</button></p>
 
@@ -260,13 +260,13 @@
 
 <h3 id="alerts">Alerts</h3>
 
-<p>Bootstrap provides a collection of alerts for user feedback messages . Use the standard colors described in the <a href="#colors">colors section</a>.</p>
+<p>Bootstrap provides a collection of alerts for user feedback messages . By default, they follow the standard colors described in the <a href="#colors">colors section</a>.</p>
 
 <p>See <a href="http://getbootstrap.com/components/#alerts">Bootstrap/alerts</a> about how to use</p>
 
 <h3 id="icons">Icons</h3>
 
-<p>Font Awesome is installed on WA. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.</p>
+<p>Font Awesome is installed on BPP. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.</p>
 
 <p>See <a href="http://fontawesome.io">Font Awesome</a> about how to use</p>
 
@@ -308,10 +308,10 @@
 <h3 id="colors">Colors</h3>
 
 <p>Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.</p>
-<h4 class='brand-color'>Brand color</h4><h4 class='brand-success'>Brand success</h4><h4 class='brand-warning'>Brand warning</h4><h4 class='brand-danger'>Brand danger</h4>
-<p>The main color palette of a white label site is grayscale - only exceptions are alerts and signal colors.</p>
 
-<p>The main colors of a site can be applied using the following classes:</p>
+<p>The main color palette follows the Bootstrap standard colors:</p>
+<h4 class='brand-color'>Brand color</h4><h4 class='brand-success'>Brand success</h4><h4 class='brand-warning'>Brand warning</h4><h4 class='brand-danger'>Brand danger</h4>
+<p>Links, buttons, alerts etc. will have the appropriate colors applied by default. If you need to color other elements, use the following classes:</p>
 <div class='highlight'><pre><code class='css'><span class='nc'>.brand-color</span> <span class='o'>//</span><span class='nt'>text</span> <span class='nt'>color</span>
 <span class='nc'>.brand-color-bg</span> <span class='o'>//</span><span class='nt'>background</span> <span class='nt'>color</span>
 
@@ -329,7 +329,7 @@ A container with the brand color as background
 </code></pre></div>
 <h4 id="widgets">Widgets</h4>
 
-<p>Widgets form a central part on the WA platform as modules that can be placed around the site and on front pages.</p>
+<p>Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.</p>
 
 <p>Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.</p>
 
@@ -585,11 +585,18 @@ A container with the brand color as background
 
 <h3 id="javascript">JavaScript</h3>
 
-<p>The White Album platform uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.</p>
+<p>BPP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.</p>
 
+<p>Scripts on the platform are minified and delivered through Rails’ asset pipeline meaning that all scripts are available anywhere and don’t need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.</p>
+
+<p>Example:</p>
+<div class='highlight'><pre><code class='javascript'><span class='k'>if</span><span class='p'>(</span><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;[data-component=&quot;element&quot;]&#39;</span><span class='p'>).</span><span class='nx'>length</span><span class='p'>)</span> <span class='p'>{</span>
+  <span class='nx'>runFunction</span><span class='p'>();</span>
+<span class='p'>}</span>
+</code></pre></div>
 <h4 id="data_attributes">Data attributes</h4>
 
-<p>The White Album JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.</p>
+<p>BPP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.</p>
 
 <p><strong>Example:</strong></p>
 
@@ -601,7 +608,7 @@ A container with the brand color as background
 </code></pre></div>
 <h4 id="plugins">Plugins</h4>
 
-<p>The White Album uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.</p>
+<p>BPP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.</p>
 
 <p><strong>$.checkRegex</strong></p>
 
@@ -630,7 +637,7 @@ A container with the brand color as background
 
 <h4 id="components">Components</h4>
 
-<p>White Album extends Bootstrap’s JavaScript components with a suite of features that can be initialized using data-attributes:</p>
+<p>BPP extends Bootstrap’s JavaScript components with a suite of features that can be initialized using data-attributes:</p>
 
 <p><strong>Image rotator</strong></p>
 
