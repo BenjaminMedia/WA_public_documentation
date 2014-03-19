@@ -2,13 +2,15 @@
 Introduction
 ---
 
-This document describes the overall design patterns of the White Album (WA) platform. White Album is a “white label” CMS that Benjamin Media sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
+This document describes the overall design patterns of the Bonnier Publications web site platform (BPP).
+
+The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BPP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
 
 External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.
 
 ### Visual patterns
 
-The platform is made fully responsive enabled by the Twitter Bootstrap CSS-framework [Bootstrap CSS-framework](http://getbootstrap.com/).
+The platform is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
 The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.
 
 The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.
@@ -40,11 +42,9 @@ The brand logo - as default it will be placed to the left
 
 The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.
 
-The navigation will fixate itself to the top of the screen when the user scrolls down the site.
-
 ### Included in `<head>`
 
-WA uses the HTML5 doctype:
+BPP uses the HTML5 doctype:
 
 {% highlight html %}
   <!DOCTYPE html>
@@ -64,9 +64,9 @@ The `<head>` will further include :
 
 ### Bootstrap
 
-WA is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
+BPP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
 
-WA does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included and used throughout the White Album platform:
+BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
 
 * mixins
 * normalize
@@ -88,11 +88,11 @@ WA does not include unused Bootstrap components. For this reason, here is a comp
 * utilities
 * responsive-utilities
 
-See the full list of available Bootstrap elements [here](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss), and let us know if you think something more should be included
+See the full list of available Bootstrap elements [here](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss), and let us know if you think something is missing
 
 #### Grid
 
-The WA platform uses the 12 column responsive grid provided by Bootstrap.
+The BPP platform uses the 12 column responsive grid provided by Bootstrap.
 
 The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). In most cases these breakpoints will be effectuated as follows:
 
@@ -112,7 +112,7 @@ Button colors follow the overall site colors meaning that, for instance, the pri
 
 See [Bootstrap/buttons](http://getbootstrap.com/css/#buttons) about how to use
 
-For facebook buttons, use the class `.btn-facebook` :
+The Bootstrap buttons have been extended with a facebook styled button enabled by class `.btn-facebook` :
 
 {{ raw }}
 <button class="btn-facebook">Login med facebook</button>
@@ -124,12 +124,12 @@ Use Bootstrap’s form classes to style forms: [http://getbootstrap.com/css/#for
 Select the smallest height sizing class for input fields: `.input-sm`
 
 ### Alerts
-Bootstrap provides a collection of alerts for user feedback messages . Use the standard colors described in the [colors section](#colors).
+Bootstrap provides a collection of alerts for user feedback messages . By default, they follow the standard colors described in the [colors section](#colors).
 
 See [Bootstrap/alerts](http://getbootstrap.com/components/#alerts) about how to use
 
 ### Icons
-Font Awesome is installed on WA. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.
+Font Awesome is installed on BPP. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.
 
 See [Font Awesome](http://fontawesome.io) about how to use
 
@@ -199,6 +199,8 @@ For wysiwyg generated copy wrap the content inside class `.wysiwyg`
 
 Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.
 
+The main color palette follows the Bootstrap standard colors:
+
 {{ raw }}
   <h4 class="brand-color">Brand color</h4>
   <h4 class="brand-success">Brand success</h4>
@@ -206,9 +208,7 @@ Most magazine sites rely on good photo material. Thus, the designer should provi
   <h4 class="brand-danger">Brand danger</h4>
 {{ endraw }}
 
-The main color palette of a white label site is grayscale - only exceptions are alerts and signal colors.
-
-The main colors of a site can be applied using the following classes:
+Links, buttons, alerts etc. will have the appropriate colors applied by default. If you need to color other elements, use the following classes:
 
 {% highlight css %}
 .brand-color //text color
@@ -232,7 +232,7 @@ A container with the brand color as background
 
 #### Widgets
 
-Widgets form a central part on the WA platform as modules that can be placed around the site and on front pages.
+Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.
 
 Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.
 
@@ -426,10 +426,20 @@ Simple helper classes that do what the title says:
 
 ### JavaScript
 
-The White Album platform uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
+BPP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
+
+Scripts on the platform are minified and delivered through Rails' asset pipeline meaning that all scripts are available anywhere and don't need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.
+
+Example:
+
+{% highlight javascript %}
+if($('[data-component="element"]').length) {
+  runFunction();
+}
+{% endhighlight %}
 
 #### Data attributes
-The White Album JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
+BPP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
 
 **Example:**
 
@@ -447,7 +457,7 @@ $('[data-toggle="button"]').on('click', doSomething);
 
 ####Plugins
 
-The White Album uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
+BPP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
 
 **$.checkRegex**
 
@@ -479,7 +489,7 @@ All plugins are unit tested with [Jasmine.js](http://jasmine.github.io/2.0/intro
 
 ####Components
 
-White Album extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
+BPP extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
 
 **Image rotator**
 
