@@ -21,9 +21,11 @@ Use Liquid highlight to style code
 
 and Liquid raw to make untranslated code examples
 
+```html
 {% raw %}
 <div class="class-name">Some example</div>
 {% endraw %}
+```
 
 It's possible to build the site manually running $ jekyll build. Normally that will not be necessary as Github does this automatically when pushed to the repository.
 
