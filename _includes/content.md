@@ -1,27 +1,28 @@
----
-Introduction
----
+---Introduction---
 
-This document describes the overall design patterns of the Bonnier Publications web site platform (BPP).
+This document describes the overall design patterns of the Bonnier platform (BP).
 
-The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BPP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
+The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
 
 External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.
 
+### Technical patterns
+
+The BP is build with [object oriented CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.
+
 ### Visual patterns
 
-The platform is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
-The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.
+BP is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
 
 The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.
 
 ![Horisontal Ordering](images/fullwidth.jpg)
 
-Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
+Most of the Bonnier products have access to quality photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention from the content. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
 
 ### Header & footer
 
-The WA header and footer, which may be imported on external sites, consists of...
+The BP header and footer, which may be imported on external sites, consists of...
 A full width banner and optional side banners (horseshoe)
 The brand logo - as default it will be placed to the left
 
@@ -44,7 +45,7 @@ The navigation menu has drop downs to display sub pages of each section. On smal
 
 ### Included in `<head>`
 
-BPP uses the HTML5 doctype:
+BP uses the HTML5 doctype:
 
 {% highlight html %}
   <!DOCTYPE html>
@@ -58,15 +59,15 @@ The `<head>` will further include :
 * Relevant meta tags:
 
 {% highlight html %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1;">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1;">
 {% endhighlight %}
 
 ### Bootstrap
 
-BPP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
+BP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
 
-BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
+BP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
 
 * mixins
 * normalize
@@ -88,29 +89,27 @@ BPP does not include unused Bootstrap components. For this reason, here is a com
 * utilities
 * responsive-utilities
 
-See the full list of available Bootstrap elements [here](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss), and let us know if you think something is missing
+If you wish that other [bootstrap elements](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss) are made available to you, please let us know.
 
 #### Grid
 
-The BPP platform uses the 12 column responsive grid provided by Bootstrap.
+The BP platform uses the 12 column [responsive grid](http://getbootstrap.com/css/#grid) provided by Bootstrap.
 
-The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). In most cases these breakpoints will be effectuated as follows:
+The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). Currently that the large breakpoint still exists in our code base. We currently don't use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px.
+
+In most cases these breakpoints will be effectuated as follows:
 
 * xs:   smartphone
 * sm:   tablet portrait
 * md:   13” laptop
-* lg:   desktop
+* <s>lg:   desktop</s>
 
 Note that Bootstrap is a Mobile First framework meaning that the xs-breakpoint is the default. This means that media query exceptions should be applied to the larger representations and not the other way around.
 
-See the Bootstrap documentation on how to use the [grid classes](http://getbootstrap.com/css/#grid)
-
 ### Buttons
-Use the Bootstrap buttons when a link needs special attention:
+Use the [Bootstrap buttons](http://getbootstrap.com/css/#buttons) when a link needs special attention:
 
 Button colors follow the overall site colors meaning that, for instance, the primary button has the primary brand color.
-
-See [Bootstrap/buttons](http://getbootstrap.com/css/#buttons) about how to use
 
 The Bootstrap buttons have been extended with a facebook styled button enabled by class `.btn-facebook` :
 
@@ -119,27 +118,23 @@ The Bootstrap buttons have been extended with a facebook styled button enabled b
 {{ endraw }}
 
 ### Forms
-Use Bootstrap’s form classes to style forms: [http://getbootstrap.com/css/#forms](http://getbootstrap.com/css/#forms)
+Use Bootstrap’s form classes to style [forms](http://getbootstrap.com/css/#forms).
 
 Select the smallest height sizing class for input fields: `.input-sm`
 
 ### Alerts
-Bootstrap provides a collection of alerts for user feedback messages . By default, they follow the standard colors described in the [colors section](#colors).
-
-See [Bootstrap/alerts](http://getbootstrap.com/components/#alerts) about how to use
+Bootstrap provides a collection of [alerts](http://getbootstrap.com/components/#alerts) for user feedback messages. By default, they follow the colors described in the [colors section](#colors).
 
 ### Icons
-Font Awesome is installed on BPP. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.
-
-See [Font Awesome](http://fontawesome.io) about how to use
+[Font Awesome](http://fontawesome.io) is implemented on BP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.
 
 ### CSS HELPERS
 
 ### Headers and copy
 
-Keep a clear hierarchy between different headers and copy. Each brand has a standard font that should be used on extensions as well to keep consistency.
+Keep a clear hierarchy between different headers and text. In general each site has a primary font and a secondary font, these will be applied through the header- and text classes.
 
-The base font of copy is 16px and uses absolute pixel sizes (not ems or pt).
+All font sizes are specified in pixels (not em or pt).
 
 Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and copy:
 
@@ -147,18 +142,61 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 
 {{ raw }}
 <h1 class="header-primary">Header-primary</h1>
-<h1 class="header-secondary">Header-secondary</h1>
-<h1 class="header-tertiary">Header-tertiary</h1>
-<h1 class="header-quaternary">Header-quaternary</h1>
 {{ endraw }}
-
 
 {% highlight css %}
 .header-primary
+{% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-primary">Header-primary</h1>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<h1 class="header-secondary">Header-secondary</h1>
+{{ endraw }}
+
+{% highlight css %}
 .header-secondary
+{% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-secondary">Header-secondary</h1>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<h1 class="header-tertiary">Header-tertiary</h1>
+{{ endraw }}
+
+{% highlight css %}
 .header-tertiary
+{% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-tertiary">Header-tertiary</h1>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<h1 class="header-quaternary">Header-quaternary</h1>
+{{ endraw }}
+
+{% highlight css %}
 .header-quaternary
 {% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-quaternary">Header-quaternary</h1>
+{% endhighlight %}
+
+<br />
+
+Example:
 
 {% highlight html %}
 <h1 class=”header-primary”>A primary headline</h1>
@@ -166,25 +204,193 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 <h2 class=”header-primary”>A semantically secondary headline, that visually looks the same as a primary headline</h2>
 {% endhighlight %}
 
-**Copy:**
+**Text:**
 
 {{ raw }}
-<p class="copy">Copy</p>
-<p class="copy-distinct">Copy-distinct</p>
-<p class="copy-tiny">Copy-tiny</p>
-<p class="copy-note">Copy-note</p>
-{{ enraw }}
+<p class="text">Text</p>
+{{ endraw }}
 
 {% highlight css %}
-.copy
-.copy-distinct //standard bold copy
-.copy-tiny //small copy
-.copy-note //small italic copy
+.text
 {% endhighlight %}
+
+{% highlight html %}
+<p class="text">Text</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-distinct">Text-distinct</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-distinct
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-distinct">Text-distinct</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-tiny">Text-tiny</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-tiny
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-tiny">Text-tiny</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-note">Text-note</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-note
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-note">Text-note</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-muted">Text-muted</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-muted
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-muted">Text-muted</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-thin">Text-thin</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-thin
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-thin">Text-thin</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-normal">Text-normal</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-normal
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-normal">Text-normal</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-bold">Text-bold</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-bold
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-bold">Text-bold</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-uppercase">Text-uppercase</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-uppercase
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-uppercase">Text-uppercase</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-italic">Text-italic</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-italic
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-italic">Text-italic</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="text-white">Text-white</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-white
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-white">Text-white</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="reset-lineheight">Reset-lineheight</p>
+{{ endraw }}
+
+{% highlight css %}
+.reset-lineheight
+{% endhighlight %}
+
+{% highlight html %}
+<p class="reset-lineheight">Reset-lineheight</p>
+{% endhighlight %}
+
+<br />
+
+{{ raw }}
+<p class="reset-text-color">Reset-text-color</p>
+{{ endraw }}
+
+{% highlight css %}
+.reset-text-color
+{% endhighlight %}
+
+{% highlight html %}
+<p class="reset-text-color">Reset-text-color</p>
+{% endhighlight %}
+
+<br />
 
 **Wysiwyg:**
 
-For wysiwyg generated copy wrap the content inside class `.wysiwyg`
+For wysiwyg generated text, wrap the content inside class `.wysiwyg`
 
 {% highlight html %}
 <div class=”wysiwyg”>
@@ -195,9 +401,11 @@ For wysiwyg generated copy wrap the content inside class `.wysiwyg`
 </div>
 {% endhighlight %}
 
+<br />
+
 ### Colors
 
-Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.
+Most magazine sites rely on quality photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand. Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.
 
 The main color palette follows the Bootstrap standard colors:
 
@@ -208,11 +416,11 @@ The main color palette follows the Bootstrap standard colors:
   <h4 class="brand-danger">Brand danger</h4>
 {{ endraw }}
 
-Links, buttons, alerts etc. will have the appropriate colors applied by default. If you need to color other elements, use the following classes:
+Links, buttons, alerts etc. will have the appropriate colors applied by default. To utilize the color scheme, use the following classes:
 
 {% highlight css %}
-.brand-color //text color
-.brand-color-bg //background color
+.brand-color
+.brand-color-bg
 
 .brand-danger
 .brand-danger-bg
@@ -224,19 +432,19 @@ Links, buttons, alerts etc. will have the appropriate colors applied by default.
 .brand-warning-bg
 {% endhighlight %}
 
-{% highlight html %}
+{% raw %}
 <div class=”brand-color-bg”>
 A container with the brand color as background
 </div>
-{% endhighlight %}
+{% endraw %}
 
 #### Widgets
 
-Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.
+Widgets form a central part on the BP platform as modules that can be placed around the site and on front pages.
 
 Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.
 
-`.widget` use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element
+`.widget` use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.
 
 {% highlight html %}
 <div class=”widget”>
@@ -274,6 +482,7 @@ These classes group Bootstrap’s responsive hidden-classes:
 .visible-xs-sm
 .hidden-md-lg
 .visible-md-lg
+.hidden
 {% endhighlight %}
 
 Use them like Bootstrap’s [responsive utilities](http://getbootstrap.com/css/#responsive-utilities)
@@ -283,41 +492,59 @@ Use them like Bootstrap’s [responsive utilities](http://getbootstrap.com/css/#
 Use these gutter classes to add spacing between elements or to reset margin and padding on elements:
 
 {% highlight css %}
-/* reset */
-.gutter-reset
+/* resets */
+.gutter-reset //reset all gutters
+.gutter-vertical-reset //reset top and bottom gutters
+.gutter-top-reset //reset top gutter
+.gutter-bottom-reset //reset bottom gutter
+.gutter-horisontal-reset //reset left and right gutters
+
+.reset-padding //reset all padding
+.reset-padding-left //reset left padding
+.reset-padding-right //reset right padding
+
 
 /* vertical */
-.gutter-vertical
-.gutter-vertical-lg
-.gutter-vertical-reset
+.gutter-vertical //add gutters top and bottom
+.gutter-vertical-lg //add large gutters top and bottom
 
 /* horisontal */
-.gutter-horisontal
-.gutter-horisontal-lg
-.gutter-horisontal-reset
+.gutter-horisontal //add gutters left and right
+.gutter-horisontal-lg //add large gutters left and right
 
 /* top */
-.gutter-top
-.gutter-top-lg
-.gutter-top-reset
+.gutter-top //add gutter top
+.gutter-top-lg //add large gutter top
 
 /* bottom */
-.gutter-bottom
-.gutter-bottom-lg
-.gutter-bottom-reset
-
-/* right */
-.gutter-right
+.gutter-bottom //add gutter bottom
+.gutter-bottom-lg //add gutter large bottom
 
 /* left */
-.gutter-left
+.gutter-left //add gutter left
+
+/* right */
+.gutter-right //add gutter right
 {% endhighlight %}
 
-{% highlight html %}
-<h1 class='header-primary gutter-reset'>
+<br />
+
+Example:
+
+{% raw %}
+<h2 class='header-tertiary gutter-reset'>
   A header without margin or padding
-</h1>
-<div class='row gutter-top-lg'>
+</h2>
+<div class='gutter-top-lg'>
+  Content with a large margin to the header above
+</div>
+{% endraw %}
+
+{% highlight html %}
+<h2 class='header-tertiary gutter-reset'>
+  A header without margin or padding
+</h2>
+<div class='gutter-top-lg'>
   Content with a large margin to the header above
 </div>
 {% endhighlight %}
@@ -327,108 +554,44 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 Simple helper classes that do what the title says:
 
 {% highlight css %}
+/* Widths */
 .full-width
 .max-full-width
-.center
-.fixed-center
+
+/* Positions */
 .relative
-.float-left
+.absolute
+.fixed
+.left
+.right
+.center
+
+/* Overflows */
 .overflow-auto
+.overflow-scroll
+.overflow-hidden
+
+/* Displays */
+.block
+.inline
+.inline-block
+.hide
+
+/* Misc */
 .hide-bg
+.pointer
+.horizontal-scroll
+.ellipsis
+.vertical-align-top
+.vertical-align-middle
+.vertical-align-bottom
 {% endhighlight %}
-
-### Brand styling (skins)
-
-##### Woman
-* Main color:     #CF0C56
-* Secondary color:  #292929
-* Background color:   #f8f8f8
-* Main font:    Raleway
-* Secondary font: Old Standard TT
-
-
-##### Bobedre dk+no
-* Main color:     #222222
-* Secondary color:  #DF6F06
-* Background color:   #ffffff
-* Main font:    Helvetica
-* Secondary font: none
-
-##### Bilmagasinet
-* Main color:     #c00c00
-* Secondary color:  #09729F
-* Background color:  #ffffff
-* Main font:    Arial
-* Secondary font: none
-
-##### Boligpluss
-* Main color:     #6b6496
-* Secondary color:  #c6c4dc
-* Background color:  #f0ede5
-* Main font:    Verdana
-* Secondary font: none
-
-##### Costume + Streetstyle dk
-* Main color:     #000000
-* Secondary color:  #f3a5a7
-* Background color:  #ffffff
-* Main font:    Lato
-* Secondary font: none
-
-##### Costume + Streetstyle no
-* Main color:     #000000
-* Secondary color:  #f3a5a7
-* Background color:  #ffffff
-* Main font:    BrandonGrotesque
-* Secondary font: none
-
-##### FHM
-* Main color:     #920C15
-* Secondary color:  #2e629d
-* Background color:  #ffffff
-* Main font:    Trebuchet
-* Secondary font: none
-
-##### Magasinet Liv
-* Main color:     #000000
-* Secondary color:  #e40044
-* Background:   pattern image
-* Main font:    Droid Serif
-* Secondary font: Droid Sans
-
-##### M
-* Main color:     #ea1d2c
-* Secondary color:  #000000
-* Background color:   #ededed
-* Main font:    Helvetica
-* Secondary font: none
-
-##### Penge
-* Main color:     #c00c00
-* Secondary color:  #f5f5f5
-* Background color:   #ffffff
-* Main font:    Arial
-* Secondary font: none
-
-##### Stella
-* Main color:     #333333
-* Secondary color:  #E25B82
-* Background color:   #ffffff
-* Main font:    Droid Serif
-* Secondary font: Questrial
-
-##### Tara
-* Main color:     #82002d
-* Secondary color:  #E25B82
-* Background color:   #fefefe
-* Main font:    Tahoma
-* Secondary font: None
 
 ### JavaScript
 
-BPP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
+BP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
 
-Scripts on the platform are minified and delivered through Rails' asset pipeline meaning that all scripts are available anywhere and don't need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.
+Scripts on the platform are minified and delivered through Rails 4's asset pipeline meaning that all scripts are available anywhere and don't need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.
 
 Example:
 
@@ -439,7 +602,7 @@ if($('[data-component="element"]').length) {
 {% endhighlight %}
 
 #### Data attributes
-BPP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
+BP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
 
 **Example:**
 
@@ -457,7 +620,7 @@ $('[data-toggle="button"]').on('click', doSomething);
 
 ####Plugins
 
-BPP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
+BP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
 
 **$.checkRegex**
 
@@ -489,7 +652,7 @@ All plugins are unit tested with [Jasmine.js](http://jasmine.github.io/2.0/intro
 
 ####Components
 
-BPP extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
+BP extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
 
 **Image rotator**
 
