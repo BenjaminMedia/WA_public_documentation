@@ -10,6 +10,78 @@ External partners may have different agendas and briefs, meanwhile, this guide t
 
 The BP is build with [object oriented CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.
 
+### File structure
+
+{% highlight html %}
+assets
+  |
+  |-- fonts
+  |-- images
+  |      |
+  |      |-- base
+  |      |-- site names (eg. costume)
+  | 
+  |-- javascripts
+  |      |
+  |      |-- frontend.js
+  |      |-- modules
+  |      |-- components
+  |      |-- external
+  |      |-- plugins
+  |      |-- specific
+  |
+  |-- stylesheets
+         |
+         |-- global.css.scss
+         |-- global
+         |     |
+         |     |-- site
+         |     |    |
+         |     |    |-- modules
+         |     |    |      |
+         |     |    |      |-- _variables.css.scss
+         |     |    |      |-- _mixins.css.scss
+         |     |    |
+         |     |    |-- breakpoints
+         |     |    |       |
+         |     |    |       |-- _small.css.scss
+         |     |    |       |-- _medium.css.scss
+         |     |    |       |-- _large.css.scss
+         |     |    |
+         |     |    |-- partials
+         |     |    |
+         |     |    |-- base.css.scss        
+         |     |
+         |     |-- [one for each sub-project]
+         |                    |
+         |                    |-- breakpoints
+         |                    |-- modules
+         |                    |-- partials
+         |                    |-- base.css.scss
+         |
+         |-- skins
+         |     |
+         |     |-- site names (eg. costume)
+         |     |       |
+         |     |       |-- modules
+         |     |       |      |
+         |     |       |      |-- _variables.css.scss
+         |     |       |
+         |     |       |-- partials
+         |     |       |-- breakpoints
+         |     |       |       |
+         |     |       |       |-- _small.css.scss
+         |     |       |       |-- _medium.css.scss
+         |     |       |       |-- _large.css.scss
+         |     |       |
+         |     |       |-- base.css.scss
+         |     |
+         |     |-- _variables.css.scss
+         |     |-- _vendors.css.scss
+         |
+         |-- _site_name.css.scss (eg. _costume.css.scss)
+{% endhighlight %}
+
 ### Visual patterns
 
 BP is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
@@ -130,13 +202,13 @@ Bootstrap provides a collection of [alerts](http://getbootstrap.com/components/#
 
 ### CSS HELPERS
 
-### Headers and copy
+### Headers and text
 
 Keep a clear hierarchy between different headers and text. In general each site has a primary font and a secondary font, these will be applied through the header- and text classes.
 
 All font sizes are specified in pixels (not em or pt).
 
-Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and copy:
+Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and text:
 
 **Headers:**
 
@@ -497,7 +569,7 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 .gutter-vertical-reset //reset top and bottom gutters
 .gutter-top-reset //reset top gutter
 .gutter-bottom-reset //reset bottom gutter
-.gutter-horisontal-reset //reset left and right gutters
+.gutter-horizontal-reset //reset left and right gutters
 
 .reset-padding //reset all padding
 .reset-padding-left //reset left padding
@@ -508,9 +580,9 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 .gutter-vertical //add gutters top and bottom
 .gutter-vertical-lg //add large gutters top and bottom
 
-/* horisontal */
-.gutter-horisontal //add gutters left and right
-.gutter-horisontal-lg //add large gutters left and right
+/* horizontal */
+.gutter-horizontal //add gutters left and right
+.gutter-horizontal-lg //add large gutters left and right
 
 /* top */
 .gutter-top //add gutter top
@@ -578,7 +650,7 @@ Simple helper classes that do what the title says:
 .hide
 
 /* Misc */
-.hide-bg
+.hide-background
 .pointer
 .horizontal-scroll
 .ellipsis
