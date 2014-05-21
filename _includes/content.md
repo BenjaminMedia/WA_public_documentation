@@ -165,7 +165,7 @@ BP does not include unused Bootstrap components. For this reason, here is a comp
 
 If you wish that other [bootstrap elements](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss) are made available to you, please let us know.
 
-#### Grid
+### Grid
 
 The BP platform uses the 12 column [responsive grid](http://getbootstrap.com/css/#grid) provided by Bootstrap.
 
