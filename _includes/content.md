@@ -520,6 +520,7 @@ These classes group Bootstrap’s responsive hidden-classes:
 .visible-xs-sm
 .hidden-md-lg
 .visible-md-lg
+.hidden
 {% endhighlight %}
 
 Use them like Bootstrap’s [responsive utilities](http://getbootstrap.com/css/#responsive-utilities)
@@ -529,41 +530,57 @@ Use them like Bootstrap’s [responsive utilities](http://getbootstrap.com/css/#
 Use these gutter classes to add spacing between elements or to reset margin and padding on elements:
 
 {% highlight css %}
-/* reset */
-.gutter-reset
+/* resets */
+.gutter-reset //reset all gutters
+.gutter-vertical-reset //reset top and bottom gutters
+.gutter-top-reset //reset top gutter
+.gutter-bottom-reset //reset bottom gutter
+.gutter-horizontal-reset //reset left and right gutters
+
+.reset-padding //reset all padding
+.reset-padding-left //reset left padding
+.reset-padding-right //reset right padding
+
 
 /* vertical */
-.gutter-vertical
-.gutter-vertical-lg
-.gutter-vertical-reset
+.gutter-vertical //add gutters top and bottom
+.gutter-vertical-lg //add large gutters top and bottom
 
-/* horisontal */
-.gutter-horisontal
-.gutter-horisontal-lg
-.gutter-horisontal-reset
+/* horizontal */
+.gutter-horizontal //add gutters left and right
+.gutter-horizontal-lg //add large gutters left and right
 
 /* top */
-.gutter-top
-.gutter-top-lg
-.gutter-top-reset
+.gutter-top //add gutter top
+.gutter-top-lg //add large gutter top
 
 /* bottom */
-.gutter-bottom
-.gutter-bottom-lg
-.gutter-bottom-reset
-
-/* right */
-.gutter-right
+.gutter-bottom //add gutter bottom
+.gutter-bottom-lg //add gutter large bottom
 
 /* left */
-.gutter-left
+.gutter-left //add gutter left
+
+/* right */
+.gutter-right //add gutter right
 {% endhighlight %}
 
-{% highlight html %}
-<h1 class='header-primary gutter-reset'>
+Example:
+
+{% raw %}
+<h2 class="header-tertiary gutter-reset">
   A header without margin or padding
-</h1>
-<div class='row gutter-top-lg'>
+</h2>
+<div class="gutter-top-lg">
+  Content with a large margin to the header above
+</div>
+{% endraw %}
+
+{% highlight html %}
+<h2 class="header-tertiary gutter-reset">
+  A header without margin or padding
+</h2>
+<div class="gutter-top-lg">
   Content with a large margin to the header above
 </div>
 {% endhighlight %}
@@ -573,108 +590,44 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 Simple helper classes that do what the title says:
 
 {% highlight css %}
+/* Widths */
 .full-width
 .max-full-width
-.center
-.fixed-center
+
+/* Positions */
 .relative
-.float-left
+.absolute
+.fixed
+.left
+.right
+.center
+
+/* Overflows */
 .overflow-auto
-.hide-bg
+.overflow-scroll
+.overflow-hidden
+
+/* Displays */
+.block
+.inline
+.inline-block
+.bp-hide /* This is a temporary name, until we update to Bootstrap 3.0.1 */
+
+/* Misc */
+.hide-background
+.pointer
+.horizontal-scroll
+.ellipsis
+.vertical-align-top
+.vertical-align-middle
+.vertical-align-bottom
 {% endhighlight %}
-
-### Brand styling (skins)
-
-##### Woman
-* Main color:     #CF0C56
-* Secondary color:  #292929
-* Background color:   #f8f8f8
-* Main font:    Raleway
-* Secondary font: Old Standard TT
-
-
-##### Bobedre dk+no
-* Main color:     #222222
-* Secondary color:  #DF6F06
-* Background color:   #ffffff
-* Main font:    Helvetica
-* Secondary font: none
-
-##### Bilmagasinet
-* Main color:     #c00c00
-* Secondary color:  #09729F
-* Background color:  #ffffff
-* Main font:    Arial
-* Secondary font: none
-
-##### Boligpluss
-* Main color:     #6b6496
-* Secondary color:  #c6c4dc
-* Background color:  #f0ede5
-* Main font:    Verdana
-* Secondary font: none
-
-##### Costume + Streetstyle dk
-* Main color:     #000000
-* Secondary color:  #f3a5a7
-* Background color:  #ffffff
-* Main font:    Lato
-* Secondary font: none
-
-##### Costume + Streetstyle no
-* Main color:     #000000
-* Secondary color:  #f3a5a7
-* Background color:  #ffffff
-* Main font:    BrandonGrotesque
-* Secondary font: none
-
-##### FHM
-* Main color:     #920C15
-* Secondary color:  #2e629d
-* Background color:  #ffffff
-* Main font:    Trebuchet
-* Secondary font: none
-
-##### Magasinet Liv
-* Main color:     #000000
-* Secondary color:  #e40044
-* Background:   pattern image
-* Main font:    Droid Serif
-* Secondary font: Droid Sans
-
-##### M
-* Main color:     #ea1d2c
-* Secondary color:  #000000
-* Background color:   #ededed
-* Main font:    Helvetica
-* Secondary font: none
-
-##### Penge
-* Main color:     #c00c00
-* Secondary color:  #f5f5f5
-* Background color:   #ffffff
-* Main font:    Arial
-* Secondary font: none
-
-##### Stella
-* Main color:     #333333
-* Secondary color:  #E25B82
-* Background color:   #ffffff
-* Main font:    Droid Serif
-* Secondary font: Questrial
-
-##### Tara
-* Main color:     #82002d
-* Secondary color:  #E25B82
-* Background color:   #fefefe
-* Main font:    Tahoma
-* Secondary font: None
 
 ### JavaScript
 
-BPP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
+BP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
 
-Scripts on the platform are minified and delivered through Rails' asset pipeline meaning that all scripts are available anywhere and don't need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.
+Scripts on the platform are minified and delivered through Rails 4's asset pipeline meaning that all scripts are available anywhere and don't need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.
 
 Example:
 
@@ -685,7 +638,7 @@ if($('[data-component="element"]').length) {
 {% endhighlight %}
 
 #### Data attributes
-BPP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
+BP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
 
 **Example:**
 
@@ -703,7 +656,7 @@ $('[data-toggle="button"]').on('click', doSomething);
 
 ####Plugins
 
-BPP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
+BP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
 
 **$.checkRegex**
 
@@ -735,7 +688,7 @@ All plugins are unit tested with [Jasmine.js](http://jasmine.github.io/2.0/intro
 
 ####Components
 
-BPP extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
+BP extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
 
 **Image rotator**
 
