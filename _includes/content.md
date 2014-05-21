@@ -470,11 +470,11 @@ Links, buttons, alerts etc. will have the appropriate colors applied by default.
 .brand-warning-bg
 {% endhighlight %}
 
-{% raw %}
+{{ raw }}
 <div class=”brand-color-bg”>
 A container with the brand color as background
 </div>
-{% endraw %}
+{{ endraw }}
 
 #### Widgets
 
@@ -497,12 +497,13 @@ Widgets should be designed to span the full width of the site layout in order to
 ### Badges
 Use the `.advertorial-stamp` class to add an advertorial badge on, for instance, the article lead image:
 
-{% raw %}
+{{ raw }}
 <div class="relative gutter-bottom">
   <div class='advertorial-stamp'>Badge</div>
   <img src='http://placehold.it/640x450'>
 </div>
-{% endraw %}
+test
+{{ endraw }}
 
 {% highlight html %}
 <div class='bounding-box'>
