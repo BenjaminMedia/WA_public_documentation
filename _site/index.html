@@ -107,7 +107,7 @@
       <section id="main_content" class="inner">
         
         
-<pre><code>      ---Introduction---
+<pre><code>      ---- -Introduction ----
 </code></pre>
 
 <p>This document describes the overall design patterns of the Bonnier platform (BP).</p>
@@ -131,64 +131,64 @@
   |      |-- site names (eg. costume)
   | 
   |-- javascripts
-  |       |
-  |       |-- frontend.js
-  |       |-- modules
-  |       |-- components
-  |       |-- external
-  |       |-- plugins
-  |       |-- specific
+  |      |
+  |      |-- frontend.js
+  |      |-- modules
+  |      |-- components
+  |      |-- external
+  |      |-- plugins
+  |      |-- specific
   |
   |-- stylesheets
-           |
-           |-- global.css.scss
-           |-- global
-           |     |
-           |     |-- site
-           |     |    |
-           |     |    |-- modules
-           |     |    |      |
-           |     |    |      |-- _variables.css.scss
-           |     |    |      |-- _mixins.css.scss
-           |     |    |
-           |     |    |-- breakpoints
-           |     |    |       |
-           |     |    |       |-- _small.css.scss
-           |     |    |       |-- _medium.css.scss
-           |     |    |       |-- _large.css.scss
-           |     |    |
-           |     |    |-- partials
-           |     |    |
-           |     |    |-- base.css.scss        
-           |     |
-           |     |-- [one for each sub-project]
-           |                    |
-           |                    |-- breakpoints
-           |                    |-- modules
-           |                    |-- partials
-           |                    |-- base.css.scss
-           |
-           |-- skins
-           |     |
-           |     |-- site names (eg. costume)
-           |     |       |
-           |     |       |-- modules
-           |     |       |      |
-           |     |       |      |-- _variables.css.scss
-           |     |       |
-           |     |       |-- partials
-           |     |       |-- breakpoints
-           |     |       |       |
-           |     |       |       |-- _small.css.scss
-           |     |       |       |-- _medium.css.scss
-           |     |       |       |-- _large.css.scss
-           |     |       |
-           |     |       |-- base.css.scss
-           |     |
-           |     |-- _variables.css.scss
-           |     |-- _vendors.css.scss
-           |
-           |-- _site_name.css.scss (eg. _costume.css.scss)</code></pre></div>
+         |
+         |-- global.css.scss
+         |-- global
+         |     |
+         |     |-- site
+         |     |    |
+         |     |    |-- modules
+         |     |    |      |
+         |     |    |      |-- _variables.css.scss
+         |     |    |      |-- _mixins.css.scss
+         |     |    |
+         |     |    |-- breakpoints
+         |     |    |       |
+         |     |    |       |-- _small.css.scss
+         |     |    |       |-- _medium.css.scss
+         |     |    |       |-- _large.css.scss
+         |     |    |
+         |     |    |-- partials
+         |     |    |
+         |     |    |-- base.css.scss        
+         |     |
+         |     |-- [one for each sub-project]
+         |                    |
+         |                    |-- breakpoints
+         |                    |-- modules
+         |                    |-- partials
+         |                    |-- base.css.scss
+         |
+         |-- skins
+         |     |
+         |     |-- site names (eg. costume)
+         |     |       |
+         |     |       |-- modules
+         |     |       |      |
+         |     |       |      |-- _variables.css.scss
+         |     |       |
+         |     |       |-- partials
+         |     |       |-- breakpoints
+         |     |       |       |
+         |     |       |       |-- _small.css.scss
+         |     |       |       |-- _medium.css.scss
+         |     |       |       |-- _large.css.scss
+         |     |       |
+         |     |       |-- base.css.scss
+         |     |
+         |     |-- _variables.css.scss
+         |     |-- _vendors.css.scss
+         |
+         |-- _site_name.css.scss (eg. _costume.css.scss)</code></pre></div>
 
 <h3 id="visual-patterns">Visual patterns</h3>
 
@@ -330,15 +330,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-primary&quot;</span><span class="nt">&gt;</span>Header-primary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <h1 class="header-secondary">Header-secondary</h1>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.header-secondary</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-secondary&quot;</span><span class="nt">&gt;</span>Header-secondary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <h1 class="header-tertiary">Header-tertiary</h1>
 
@@ -346,15 +342,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-tertiary&quot;</span><span class="nt">&gt;</span>Header-tertiary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <h1 class="header-quaternary">Header-quaternary</h1>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.header-quaternary</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-quaternary&quot;</span><span class="nt">&gt;</span>Header-quaternary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p>Example:</p>
 
@@ -370,15 +362,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="text-distinct">Text-distinct</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.text-distinct</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-distinct&quot;</span><span class="nt">&gt;</span>Text-distinct<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p class="text-tiny">Text-tiny</p>
 
@@ -386,15 +374,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-tiny&quot;</span><span class="nt">&gt;</span>Text-tiny<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="text-note">Text-note</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.text-note</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-note&quot;</span><span class="nt">&gt;</span>Text-note<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p class="text-muted">Text-muted</p>
 
@@ -402,15 +386,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>Text-muted<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="text-thin">Text-thin</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.text-thin</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-thin&quot;</span><span class="nt">&gt;</span>Text-thin<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p class="text-normal">Text-normal</p>
 
@@ -418,15 +398,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-normal&quot;</span><span class="nt">&gt;</span>Text-normal<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="text-bold">Text-bold</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.text-bold</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-bold&quot;</span><span class="nt">&gt;</span>Text-bold<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p class="text-uppercase">Text-uppercase</p>
 
@@ -434,15 +410,11 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-uppercase&quot;</span><span class="nt">&gt;</span>Text-uppercase<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="text-italic">Text-italic</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.text-italic</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-italic&quot;</span><span class="nt">&gt;</span>Text-italic<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p class="text-white">Text-white</p>
 
@@ -450,23 +422,17 @@ The brand logo - as default it will be placed to the left</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-white&quot;</span><span class="nt">&gt;</span>Text-white<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="reset-lineheight">Reset-lineheight</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.reset-lineheight</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-lineheight&quot;</span><span class="nt">&gt;</span>Reset-lineheight<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<p><br /></p>
-
 <p class="reset-text-color">Reset-text-color</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.reset-text-color</span></code></pre></div>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-text-color&quot;</span><span class="nt">&gt;</span>Reset-text-color<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <p><strong>Wysiwyg:</strong></p>
 
@@ -478,8 +444,6 @@ The brand logo - as default it will be placed to the left</p>
   <span class="nt">&lt;blockquote&gt;</span>Which is neatly formatted to the look and feel of an article<span class="nt">&lt;/blockquote&gt;</span>
   <span class="nt">&lt;p&gt;</span>The .wysiwyg tag makes sure that all that user submitted content looks good even though the HTML code might not be.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-<p><br /></p>
 
 <h3 id="colors">Colors</h3>
 
@@ -589,8 +553,6 @@ A container with the brand color as background
 <span class="c">/* right */</span>
 <span class="nc">.gutter-right</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">right</span></code></pre></div>
 
-<p><br /></p>
-
 <p>Example:</p>
 
 <h2 class="header-tertiary gutter-reset">
@@ -632,7 +594,7 @@ A container with the brand color as background
 <span class="nc">.block</span>
 <span class="nc">.inline</span>
 <span class="nc">.inline-block</span>
-<span class="nc">.hide</span>
+<span class="nc">.bp-hide</span> <span class="c">/* This is a temporary name, until we update to Bootstrap 3.0.1 */</span>
 
 <span class="c">/* Misc */</span>
 <span class="nc">.hide-background</span>
