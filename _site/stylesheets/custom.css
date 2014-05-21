@@ -46,6 +46,10 @@ header.inner {
   clear: both;
 }
 
+.text-normal {
+  font-weight: 400!important;
+}
+
 @media (max-width: 900px) {
   .navigation {
     width: 100%;
