@@ -113,13 +113,13 @@ The brand logo - as default it will be placed to the left
 ### Your area of control:
 ![Horisontal Ordering](images/areaofcontrol.jpg)
 
-#### Navigation
+### Navigation
 
 The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.
 
 ### Included in `<head>`
 
-BPP uses the HTML5 doctype:
+BP uses the HTML5 doctype:
 
 {% highlight html %}
   <!DOCTYPE html>
@@ -133,15 +133,15 @@ The `<head>` will further include :
 * Relevant meta tags:
 
 {% highlight html %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1;">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1;">
 {% endhighlight %}
 
 ### Bootstrap
 
-BPP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
+BP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
 
-BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
+BP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
 
 * mixins
 * normalize
@@ -163,29 +163,27 @@ BPP does not include unused Bootstrap components. For this reason, here is a com
 * utilities
 * responsive-utilities
 
-See the full list of available Bootstrap elements [here](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss), and let us know if you think something is missing
+If you wish that other [bootstrap elements](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss) are made available to you, please let us know.
 
 #### Grid
 
-The BPP platform uses the 12 column responsive grid provided by Bootstrap.
+The BP platform uses the 12 column [responsive grid](http://getbootstrap.com/css/#grid) provided by Bootstrap.
 
-The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). In most cases these breakpoints will be effectuated as follows:
+The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). Currently that the large breakpoint still exists in our code base. We currently don't use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px.
+
+In most cases these breakpoints will be effectuated as follows:
 
 * xs:   smartphone
 * sm:   tablet portrait
 * md:   13” laptop
-* lg:   desktop
+* <s>lg:   desktop</s>
 
 Note that Bootstrap is a Mobile First framework meaning that the xs-breakpoint is the default. This means that media query exceptions should be applied to the larger representations and not the other way around.
 
-See the Bootstrap documentation on how to use the [grid classes](http://getbootstrap.com/css/#grid)
-
 ### Buttons
-Use the Bootstrap buttons when a link needs special attention:
+Use the [Bootstrap buttons](http://getbootstrap.com/css/#buttons) when a link needs special attention:
 
 Button colors follow the overall site colors meaning that, for instance, the primary button has the primary brand color.
-
-See [Bootstrap/buttons](http://getbootstrap.com/css/#buttons) about how to use
 
 The Bootstrap buttons have been extended with a facebook styled button enabled by class `.btn-facebook` :
 
@@ -194,7 +192,7 @@ The Bootstrap buttons have been extended with a facebook styled button enabled b
 {{ endraw }}
 
 ### Forms
-Use Bootstrap’s form classes to style forms: [http://getbootstrap.com/css/#forms](http://getbootstrap.com/css/#forms)
+Use Bootstrap’s form classes to style [forms](http://getbootstrap.com/css/#forms).
 
 Select the smallest height sizing class for input fields: `.input-sm`
 
