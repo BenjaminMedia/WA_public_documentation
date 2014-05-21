@@ -197,41 +197,72 @@ Use Bootstrap’s form classes to style [forms](http://getbootstrap.com/css/#for
 Select the smallest height sizing class for input fields: `.input-sm`
 
 ### Alerts
-Bootstrap provides a collection of alerts for user feedback messages . By default, they follow the standard colors described in the [colors section](#colors).
-
-See [Bootstrap/alerts](http://getbootstrap.com/components/#alerts) about how to use
+Bootstrap provides a collection of [alerts](http://getbootstrap.com/components/#alerts) for user feedback messages. By default, they follow the colors described in the [colors section](#colors).
 
 ### Icons
-Font Awesome is installed on BPP. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.
-
-See [Font Awesome](http://fontawesome.io) about how to use
+[Font Awesome](http://fontawesome.io) is implemented on BP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.
 
 ### CSS HELPERS
 
-### Headers and copy
+### Headers and text
 
-Keep a clear hierarchy between different headers and copy. Each brand has a standard font that should be used on extensions as well to keep consistency.
+Keep a clear hierarchy between different headers and text. In general each site has a primary font and a secondary font, these will be applied through the header- and text classes.
 
-The base font of copy is 16px and uses absolute pixel sizes (not ems or pt).
+All font sizes are specified in pixels (not em or pt).
 
-Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and copy:
+Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and text:
 
 **Headers:**
 
 {{ raw }}
 <h1 class="header-primary">Header-primary</h1>
-<h1 class="header-secondary">Header-secondary</h1>
-<h1 class="header-tertiary">Header-tertiary</h1>
-<h1 class="header-quaternary">Header-quaternary</h1>
 {{ endraw }}
-
 
 {% highlight css %}
 .header-primary
+{% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-primary">Header-primary</h1>
+{% endhighlight %}
+
+{{ raw }}
+<h1 class="header-secondary">Header-secondary</h1>
+{{ endraw }}
+
+{% highlight css %}
 .header-secondary
+{% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-secondary">Header-secondary</h1>
+{% endhighlight %}
+
+{{ raw }}
+<h1 class="header-tertiary">Header-tertiary</h1>
+{{ endraw }}
+
+{% highlight css %}
 .header-tertiary
+{% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-tertiary">Header-tertiary</h1>
+{% endhighlight %}
+
+{{ raw }}
+<h1 class="header-quaternary">Header-quaternary</h1>
+{{ endraw }}
+
+{% highlight css %}
 .header-quaternary
 {% endhighlight %}
+
+{% highlight html %}
+<h1 class="header-quaternary">Header-quaternary</h1>
+{% endhighlight %}
+
+Example:
 
 {% highlight html %}
 <h1 class=”header-primary”>A primary headline</h1>
@@ -239,20 +270,162 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 <h2 class=”header-primary”>A semantically secondary headline, that visually looks the same as a primary headline</h2>
 {% endhighlight %}
 
-**Copy:**
+**Text:**
 
 {{ raw }}
-<p class="copy">Copy</p>
-<p class="copy-distinct">Copy-distinct</p>
-<p class="copy-tiny">Copy-tiny</p>
-<p class="copy-note">Copy-note</p>
-{{ enraw }}
+<p class="text">Text</p>
+{{ endraw }}
 
 {% highlight css %}
-.copy
-.copy-distinct //standard bold copy
-.copy-tiny //small copy
-.copy-note //small italic copy
+.text
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text">Text</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-distinct">Text-distinct</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-distinct
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-distinct">Text-distinct</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-tiny">Text-tiny</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-tiny
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-tiny">Text-tiny</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-note">Text-note</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-note
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-note">Text-note</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-muted">Text-muted</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-muted
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-muted">Text-muted</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-thin">Text-thin</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-thin
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-thin">Text-thin</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-normal">Text-normal</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-normal
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-normal">Text-normal</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-bold">Text-bold</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-bold
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-bold">Text-bold</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-uppercase">Text-uppercase</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-uppercase
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-uppercase">Text-uppercase</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-italic">Text-italic</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-italic
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-italic">Text-italic</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="text-white">Text-white</p>
+{{ endraw }}
+
+{% highlight css %}
+.text-white
+{% endhighlight %}
+
+{% highlight html %}
+<p class="text-white">Text-white</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="reset-lineheight">Reset-lineheight</p>
+{{ endraw }}
+
+{% highlight css %}
+.reset-lineheight
+{% endhighlight %}
+
+{% highlight html %}
+<p class="reset-lineheight">Reset-lineheight</p>
+{% endhighlight %}
+
+{{ raw }}
+<p class="reset-text-color">Reset-text-color</p>
+{{ endraw }}
+
+{% highlight css %}
+.reset-text-color
+{% endhighlight %}
+
+{% highlight html %}
+<p class="reset-text-color">Reset-text-color</p>
 {% endhighlight %}
 
 **Wysiwyg:**
