@@ -433,7 +433,7 @@ Example:
 For wysiwyg generated text, wrap the content inside class `.wysiwyg`
 
 {% highlight html %}
-<div class=”wysiwyg”>
+<div class="wysiwyg">
   <h2>My headline</h2>
   <p>Text inserted by a WYSIWYG editor</p>
   <blockquote>Which is neatly formatted to the look and feel of an article</blockquote>
@@ -471,7 +471,7 @@ Links, buttons, alerts etc. will have the appropriate colors applied by default.
 {% endhighlight %}
 
 {{ raw }}
-<div class=”brand-color-bg”>
+<div class="brand-color-bg">
 A container with the brand color as background
 </div>
 {{ endraw }}
@@ -485,9 +485,9 @@ Widgets should be designed to span the full width of the site layout in order to
 `.widget` use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.
 
 {% highlight html %}
-<div class=”widget”>
-  <div class=”row”>
-    <div class=”col-md-12”>
+<div class="widget">
+  <div class="row">
+    <div class="col-md-12">
       Widget content
     </div>
   </div>
@@ -499,16 +499,15 @@ Use the `.advertorial-stamp` class to add an advertorial badge on, for instance,
 
 {{ raw }}
 <div class="relative gutter-bottom">
-  <div class='advertorial-stamp'>Badge</div>
+  <div class="advertorial-stamp">Badge</div>
   <img src='http://placehold.it/640x450'>
 </div>
-<p>test</p>
 {{ endraw }}
 
 {% highlight html %}
-<div class='bounding-box'>
-  <div class='advertorial-stamp'>ANNONCE</div>
-  <img src='image.jpg 'alt='image name'>
+<div class="bounding-box">
+  <div class="advertorial-stamp">ANNONCE</div>
+  <img src="image.jpg" alt="image name">
 </div>
 {% endhighlight %}
 
