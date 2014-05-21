@@ -12,6 +12,78 @@ External partners may have different agendas and briefs, meanwhile, this guide t
 
 The BP is build with [object oriented CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.
 
+### File structure
+
+{% highlight html %}
+assets
+  |
+  |-- fonts
+  |-- images
+  |      |
+  |      |-- base
+  |      |-- site names (eg. costume)
+  | 
+  |-- javascripts
+  |      |
+  |      |-- frontend.js
+  |      |-- modules
+  |      |-- components
+  |      |-- external
+  |      |-- plugins
+  |      |-- specific
+  |
+  |-- stylesheets
+         |
+         |-- global.css.scss
+         |-- global
+         |     |
+         |     |-- site
+         |     |    |
+         |     |    |-- modules
+         |     |    |      |
+         |     |    |      |-- _variables.css.scss
+         |     |    |      |-- _mixins.css.scss
+         |     |    |
+         |     |    |-- breakpoints
+         |     |    |       |
+         |     |    |       |-- _small.css.scss
+         |     |    |       |-- _medium.css.scss
+         |     |    |       |-- _large.css.scss
+         |     |    |
+         |     |    |-- partials
+         |     |    |
+         |     |    |-- base.css.scss        
+         |     |
+         |     |-- [one for each sub-project]
+         |                    |
+         |                    |-- breakpoints
+         |                    |-- modules
+         |                    |-- partials
+         |                    |-- base.css.scss
+         |
+         |-- skins
+         |     |
+         |     |-- site names (eg. costume)
+         |     |       |
+         |     |       |-- modules
+         |     |       |      |
+         |     |       |      |-- _variables.css.scss
+         |     |       |
+         |     |       |-- partials
+         |     |       |-- breakpoints
+         |     |       |       |
+         |     |       |       |-- _small.css.scss
+         |     |       |       |-- _medium.css.scss
+         |     |       |       |-- _large.css.scss
+         |     |       |
+         |     |       |-- base.css.scss
+         |     |
+         |     |-- _variables.css.scss
+         |     |-- _vendors.css.scss
+         |
+         |-- _site_name.css.scss (eg. _costume.css.scss)
+{% endhighlight %}
+
 ### Visual patterns
 
 The platform is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
