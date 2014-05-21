@@ -86,18 +86,17 @@ assets
 
 ### Visual patterns
 
-The platform is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
-The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.
+BP is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
 
 The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.
 
 ![Horisontal Ordering](images/fullwidth.jpg)
 
-Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
+Most of the Bonnier products have access to quality photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention from the content. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
 
 ### Header & footer
 
-The WA header and footer, which may be imported on external sites, consists of...
+The BP header and footer, which may be imported on external sites, consists of...
 A full width banner and optional side banners (horseshoe)
 The brand logo - as default it will be placed to the left
 
