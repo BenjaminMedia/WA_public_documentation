@@ -226,8 +226,6 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 <h1 class="header-primary">Header-primary</h1>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <h1 class="header-secondary">Header-secondary</h1>
 {{ endraw }}
@@ -239,8 +237,6 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 {% highlight html %}
 <h1 class="header-secondary">Header-secondary</h1>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <h1 class="header-tertiary">Header-tertiary</h1>
@@ -254,8 +250,6 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 <h1 class="header-tertiary">Header-tertiary</h1>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <h1 class="header-quaternary">Header-quaternary</h1>
 {{ endraw }}
@@ -267,8 +261,6 @@ Use the tags h1, h2, h3, p etc. semantically and add the following classes to st
 {% highlight html %}
 <h1 class="header-quaternary">Header-quaternary</h1>
 {% endhighlight %}
-
-<br />
 
 Example:
 
@@ -292,8 +284,6 @@ Example:
 <p class="text">Text</p>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <p class="text-distinct">Text-distinct</p>
 {{ endraw }}
@@ -305,8 +295,6 @@ Example:
 {% highlight html %}
 <p class="text-distinct">Text-distinct</p>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <p class="text-tiny">Text-tiny</p>
@@ -320,8 +308,6 @@ Example:
 <p class="text-tiny">Text-tiny</p>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <p class="text-note">Text-note</p>
 {{ endraw }}
@@ -333,8 +319,6 @@ Example:
 {% highlight html %}
 <p class="text-note">Text-note</p>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <p class="text-muted">Text-muted</p>
@@ -348,8 +332,6 @@ Example:
 <p class="text-muted">Text-muted</p>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <p class="text-thin">Text-thin</p>
 {{ endraw }}
@@ -361,8 +343,6 @@ Example:
 {% highlight html %}
 <p class="text-thin">Text-thin</p>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <p class="text-normal">Text-normal</p>
@@ -376,8 +356,6 @@ Example:
 <p class="text-normal">Text-normal</p>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <p class="text-bold">Text-bold</p>
 {{ endraw }}
@@ -389,8 +367,6 @@ Example:
 {% highlight html %}
 <p class="text-bold">Text-bold</p>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <p class="text-uppercase">Text-uppercase</p>
@@ -404,8 +380,6 @@ Example:
 <p class="text-uppercase">Text-uppercase</p>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <p class="text-italic">Text-italic</p>
 {{ endraw }}
@@ -417,8 +391,6 @@ Example:
 {% highlight html %}
 <p class="text-italic">Text-italic</p>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <p class="text-white">Text-white</p>
@@ -432,8 +404,6 @@ Example:
 <p class="text-white">Text-white</p>
 {% endhighlight %}
 
-<br />
-
 {{ raw }}
 <p class="reset-lineheight">Reset-lineheight</p>
 {{ endraw }}
@@ -445,8 +415,6 @@ Example:
 {% highlight html %}
 <p class="reset-lineheight">Reset-lineheight</p>
 {% endhighlight %}
-
-<br />
 
 {{ raw }}
 <p class="reset-text-color">Reset-text-color</p>
@@ -460,8 +428,6 @@ Example:
 <p class="reset-text-color">Reset-text-color</p>
 {% endhighlight %}
 
-<br />
-
 **Wysiwyg:**
 
 For wysiwyg generated text, wrap the content inside class `.wysiwyg`
@@ -474,8 +440,6 @@ For wysiwyg generated text, wrap the content inside class `.wysiwyg`
   <p>The .wysiwyg tag makes sure that all that user submitted content looks good even though the HTML code might not be.</p>
 </div>
 {% endhighlight %}
-
-<br />
 
 ### Colors
 
@@ -600,8 +564,6 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 /* right */
 .gutter-right //add gutter right
 {% endhighlight %}
-
-<br />
 
 Example:
 
