@@ -441,7 +441,7 @@ The brand logo - as default it will be placed to the left</p>
 
 <p>For wysiwyg generated text, wrap the content inside class <code>.wysiwyg</code></p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”wysiwyg”</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wysiwyg&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h2&gt;</span>My headline<span class="nt">&lt;/h2&gt;</span>
   <span class="nt">&lt;p&gt;</span>Text inserted by a WYSIWYG editor<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;blockquote&gt;</span>Which is neatly formatted to the look and feel of an article<span class="nt">&lt;/blockquote&gt;</span>
@@ -473,9 +473,9 @@ The brand logo - as default it will be placed to the left</p>
 <span class="nc">.brand-warning</span>
 <span class="nc">.brand-warning-bg</span></code></pre></div>
 
-<p>&lt;div class=”brand-color-bg”&gt;
+<div class="brand-color-bg">
 A container with the brand color as background
-&lt;/div&gt;</p>
+</div>
 
 <h4 id="widgets">Widgets</h4>
 
@@ -485,9 +485,9 @@ A container with the brand color as background
 
 <p><code>.widget</code> use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”widget”</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”row”</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”col-md-12”</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-12&quot;</span><span class="nt">&gt;</span>
       Widget content
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
@@ -500,11 +500,10 @@ A container with the brand color as background
   <div class="advertorial-stamp">Badge</div>
   <img src="http://placehold.it/640x450" />
 </div>
-<p>test</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;bounding-box&#39;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;advertorial-stamp&#39;</span><span class="nt">&gt;</span>ANNONCE<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&#39;image.jpg &#39;</span><span class="na">alt=</span><span class="s">&#39;image name&#39;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bounding-box&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;advertorial-stamp&quot;</span><span class="nt">&gt;</span>ANNONCE<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;image name&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <h4 id="bootstrap-related">Bootstrap related</h4>
@@ -514,7 +513,8 @@ A container with the brand color as background
 <div class="highlight"><pre><code class="css"><span class="nc">.hidden-xs-sm</span>
 <span class="nc">.visible-xs-sm</span>
 <span class="nc">.hidden-md-lg</span>
-<span class="nc">.visible-md-lg</span></code></pre></div>
+<span class="nc">.visible-md-lg</span>
+<span class="nc">.hidden</span></code></pre></div>
 
 <p>Use them like Bootstrap’s <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utilities</a></p>
 
@@ -522,39 +522,53 @@ A container with the brand color as background
 
 <p>Use these gutter classes to add spacing between elements or to reset margin and padding on elements:</p>
 
-<div class="highlight"><pre><code class="css"><span class="c">/* reset */</span>
-<span class="nc">.gutter-reset</span>
+<div class="highlight"><pre><code class="css"><span class="c">/* resets */</span>
+<span class="nc">.gutter-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">all</span> <span class="nt">gutters</span>
+<span class="nc">.gutter-vertical-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">top</span> <span class="nt">and</span> <span class="nt">bottom</span> <span class="nt">gutters</span>
+<span class="nc">.gutter-top-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">top</span> <span class="nt">gutter</span>
+<span class="nc">.gutter-bottom-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">bottom</span> <span class="nt">gutter</span>
+<span class="nc">.gutter-horizontal-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">left</span> <span class="nt">and</span> <span class="nt">right</span> <span class="nt">gutters</span>
+
+<span class="nc">.reset-padding</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">all</span> <span class="nt">padding</span>
+<span class="nc">.reset-padding-left</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">left</span> <span class="nt">padding</span>
+<span class="nc">.reset-padding-right</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">right</span> <span class="nt">padding</span>
+
 
 <span class="c">/* vertical */</span>
-<span class="nc">.gutter-vertical</span>
-<span class="nc">.gutter-vertical-lg</span>
-<span class="nc">.gutter-vertical-reset</span>
+<span class="nc">.gutter-vertical</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutters</span> <span class="nt">top</span> <span class="nt">and</span> <span class="nt">bottom</span>
+<span class="nc">.gutter-vertical-lg</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">large</span> <span class="nt">gutters</span> <span class="nt">top</span> <span class="nt">and</span> <span class="nt">bottom</span>
 
-<span class="c">/* horisontal */</span>
-<span class="nc">.gutter-horisontal</span>
-<span class="nc">.gutter-horisontal-lg</span>
-<span class="nc">.gutter-horisontal-reset</span>
+<span class="c">/* horizontal */</span>
+<span class="nc">.gutter-horizontal</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutters</span> <span class="nt">left</span> <span class="nt">and</span> <span class="nt">right</span>
+<span class="nc">.gutter-horizontal-lg</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">large</span> <span class="nt">gutters</span> <span class="nt">left</span> <span class="nt">and</span> <span class="nt">right</span>
 
 <span class="c">/* top */</span>
-<span class="nc">.gutter-top</span>
-<span class="nc">.gutter-top-lg</span>
-<span class="nc">.gutter-top-reset</span>
+<span class="nc">.gutter-top</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">top</span>
+<span class="nc">.gutter-top-lg</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">large</span> <span class="nt">gutter</span> <span class="nt">top</span>
 
 <span class="c">/* bottom */</span>
-<span class="nc">.gutter-bottom</span>
-<span class="nc">.gutter-bottom-lg</span>
-<span class="nc">.gutter-bottom-reset</span>
-
-<span class="c">/* right */</span>
-<span class="nc">.gutter-right</span>
+<span class="nc">.gutter-bottom</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">bottom</span>
+<span class="nc">.gutter-bottom-lg</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">large</span> <span class="nt">bottom</span>
 
 <span class="c">/* left */</span>
-<span class="nc">.gutter-left</span></code></pre></div>
+<span class="nc">.gutter-left</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">left</span>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&#39;header-primary gutter-reset&#39;</span><span class="nt">&gt;</span>
+<span class="c">/* right */</span>
+<span class="nc">.gutter-right</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">right</span></code></pre></div>
+
+<p>Example:</p>
+
+<h2 class="header-tertiary gutter-reset">
   A header without margin or padding
-<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;row gutter-top-lg&#39;</span><span class="nt">&gt;</span>
+</h2>
+<div class="gutter-top-lg">
+  Content with a large margin to the header above
+</div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;header-tertiary gutter-reset&quot;</span><span class="nt">&gt;</span>
+  A header without margin or padding
+<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;gutter-top-lg&quot;</span><span class="nt">&gt;</span>
   Content with a large margin to the header above
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
@@ -562,130 +576,43 @@ A container with the brand color as background
 
 <p>Simple helper classes that do what the title says:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.full-width</span>
+<div class="highlight"><pre><code class="css"><span class="c">/* Widths */</span>
+<span class="nc">.full-width</span>
 <span class="nc">.max-full-width</span>
-<span class="nc">.center</span>
-<span class="nc">.fixed-center</span>
+
+<span class="c">/* Positions */</span>
 <span class="nc">.relative</span>
-<span class="nc">.float-left</span>
+<span class="nc">.absolute</span>
+<span class="nc">.fixed</span>
+<span class="nc">.left</span>
+<span class="nc">.right</span>
+<span class="nc">.center</span>
+
+<span class="c">/* Overflows */</span>
 <span class="nc">.overflow-auto</span>
-<span class="nc">.hide-bg</span></code></pre></div>
+<span class="nc">.overflow-scroll</span>
+<span class="nc">.overflow-hidden</span>
 
-<h3 id="brand-styling-skins">Brand styling (skins)</h3>
+<span class="c">/* Displays */</span>
+<span class="nc">.block</span>
+<span class="nc">.inline</span>
+<span class="nc">.inline-block</span>
+<span class="nc">.bp-hide</span> <span class="c">/* This is a temporary name, until we update to Bootstrap 3.0.1 */</span>
 
-<h5 id="woman">Woman</h5>
-<ul>
-  <li>Main color:     #CF0C56</li>
-  <li>Secondary color:  #292929</li>
-  <li>Background color:   #f8f8f8</li>
-  <li>Main font:    Raleway</li>
-  <li>Secondary font: Old Standard TT</li>
-</ul>
-
-<h5 id="bobedre-dkno">Bobedre dk+no</h5>
-<ul>
-  <li>Main color:     #222222</li>
-  <li>Secondary color:  #DF6F06</li>
-  <li>Background color:   #ffffff</li>
-  <li>Main font:    Helvetica</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="bilmagasinet">Bilmagasinet</h5>
-<ul>
-  <li>Main color:     #c00c00</li>
-  <li>Secondary color:  #09729F</li>
-  <li>Background color:  #ffffff</li>
-  <li>Main font:    Arial</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="boligpluss">Boligpluss</h5>
-<ul>
-  <li>Main color:     #6b6496</li>
-  <li>Secondary color:  #c6c4dc</li>
-  <li>Background color:  #f0ede5</li>
-  <li>Main font:    Verdana</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="costume--streetstyle-dk">Costume + Streetstyle dk</h5>
-<ul>
-  <li>Main color:     #000000</li>
-  <li>Secondary color:  #f3a5a7</li>
-  <li>Background color:  #ffffff</li>
-  <li>Main font:    Lato</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="costume--streetstyle-no">Costume + Streetstyle no</h5>
-<ul>
-  <li>Main color:     #000000</li>
-  <li>Secondary color:  #f3a5a7</li>
-  <li>Background color:  #ffffff</li>
-  <li>Main font:    BrandonGrotesque</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="fhm">FHM</h5>
-<ul>
-  <li>Main color:     #920C15</li>
-  <li>Secondary color:  #2e629d</li>
-  <li>Background color:  #ffffff</li>
-  <li>Main font:    Trebuchet</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="magasinet-liv">Magasinet Liv</h5>
-<ul>
-  <li>Main color:     #000000</li>
-  <li>Secondary color:  #e40044</li>
-  <li>Background:   pattern image</li>
-  <li>Main font:    Droid Serif</li>
-  <li>Secondary font: Droid Sans</li>
-</ul>
-
-<h5 id="m">M</h5>
-<ul>
-  <li>Main color:     #ea1d2c</li>
-  <li>Secondary color:  #000000</li>
-  <li>Background color:   #ededed</li>
-  <li>Main font:    Helvetica</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="penge">Penge</h5>
-<ul>
-  <li>Main color:     #c00c00</li>
-  <li>Secondary color:  #f5f5f5</li>
-  <li>Background color:   #ffffff</li>
-  <li>Main font:    Arial</li>
-  <li>Secondary font: none</li>
-</ul>
-
-<h5 id="stella">Stella</h5>
-<ul>
-  <li>Main color:     #333333</li>
-  <li>Secondary color:  #E25B82</li>
-  <li>Background color:   #ffffff</li>
-  <li>Main font:    Droid Serif</li>
-  <li>Secondary font: Questrial</li>
-</ul>
-
-<h5 id="tara">Tara</h5>
-<ul>
-  <li>Main color:     #82002d</li>
-  <li>Secondary color:  #E25B82</li>
-  <li>Background color:   #fefefe</li>
-  <li>Main font:    Tahoma</li>
-  <li>Secondary font: None</li>
-</ul>
+<span class="c">/* Misc */</span>
+<span class="nc">.hide-background</span>
+<span class="nc">.pointer</span>
+<span class="nc">.horizontal-scroll</span>
+<span class="nc">.ellipsis</span>
+<span class="nc">.vertical-align-top</span>
+<span class="nc">.vertical-align-middle</span>
+<span class="nc">.vertical-align-bottom</span></code></pre></div>
 
 <h3 id="javascript">JavaScript</h3>
 
-<p>BPP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.</p>
+<p>BP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.</p>
 
-<p>Scripts on the platform are minified and delivered through Rails’ asset pipeline meaning that all scripts are available anywhere and don’t need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.</p>
+<p>Scripts on the platform are minified and delivered through Rails 4’s asset pipeline meaning that all scripts are available anywhere and don’t need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.</p>
 
 <p>Example:</p>
 
@@ -694,7 +621,7 @@ A container with the brand color as background
 <span class="p">}</span></code></pre></div>
 
 <h4 id="data-attributes">Data attributes</h4>
-<p>BPP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.</p>
+<p>BP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.</p>
 
 <p><strong>Example:</strong></p>
 
@@ -708,7 +635,7 @@ A container with the brand color as background
 
 <h4 id="plugins">Plugins</h4>
 
-<p>BPP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.</p>
+<p>BP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.</p>
 
 <p><strong>$.checkRegex</strong></p>
 
@@ -738,7 +665,7 @@ A container with the brand color as background
 
 <h4 id="components">Components</h4>
 
-<p>BPP extends Bootstrap’s JavaScript components with a suite of features that can be initialized using data-attributes:</p>
+<p>BP extends Bootstrap’s JavaScript components with a suite of features that can be initialized using data-attributes:</p>
 
 <p><strong>Image rotator</strong></p>
 
