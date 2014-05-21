@@ -647,7 +647,7 @@ Simple helper classes that do what the title says:
 .block
 .inline
 .inline-block
-.hide
+.bp-hide /* This is a temporary name, until we update to Bootstrap 3.0.1 */
 
 /* Misc */
 .hide-background
