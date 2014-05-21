@@ -430,7 +430,7 @@ Example:
 
 **Wysiwyg:**
 
-For wysiwyg generated copy wrap the content inside class `.wysiwyg`
+For wysiwyg generated text, wrap the content inside class `.wysiwyg`
 
 {% highlight html %}
 <div class=”wysiwyg”>
@@ -443,7 +443,7 @@ For wysiwyg generated copy wrap the content inside class `.wysiwyg`
 
 ### Colors
 
-Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.
+Most magazine sites rely on quality photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand. Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.
 
 The main color palette follows the Bootstrap standard colors:
 
@@ -454,11 +454,11 @@ The main color palette follows the Bootstrap standard colors:
   <h4 class="brand-danger">Brand danger</h4>
 {{ endraw }}
 
-Links, buttons, alerts etc. will have the appropriate colors applied by default. If you need to color other elements, use the following classes:
+Links, buttons, alerts etc. will have the appropriate colors applied by default. To utilize the color scheme, use the following classes:
 
 {% highlight css %}
-.brand-color //text color
-.brand-color-bg //background color
+.brand-color
+.brand-color-bg
 
 .brand-danger
 .brand-danger-bg
@@ -470,19 +470,19 @@ Links, buttons, alerts etc. will have the appropriate colors applied by default.
 .brand-warning-bg
 {% endhighlight %}
 
-{% highlight html %}
+{% raw %}
 <div class=”brand-color-bg”>
 A container with the brand color as background
 </div>
-{% endhighlight %}
+{% endraw %}
 
 #### Widgets
 
-Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.
+Widgets form a central part on the BP platform as modules that can be placed around the site and on front pages.
 
 Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.
 
-`.widget` use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element
+`.widget` use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.
 
 {% highlight html %}
 <div class=”widget”>

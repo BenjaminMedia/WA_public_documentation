@@ -70,7 +70,7 @@
             <a href="#css_helpers">CSS HELPERS</a>
           </li>
           <li>
-            <a href="#headers_and_copy">Headers and copy</a>
+            <a href="#headers_and_text">Headers and text</a>
           </li>
           <li>
             <a href="#colors">Colors</a>
@@ -276,7 +276,7 @@ The brand logo - as default it will be placed to the left</p>
 
 <p>If you wish that other <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">bootstrap elements</a> are made available to you, please let us know.</p>
 
-<h4 id="grid">Grid</h4>
+<h3 id="grid">Grid</h3>
 
 <p>The BP platform uses the 12 column <a href="http://getbootstrap.com/css/#grid">responsive grid</a> provided by Bootstrap.</p>
 
@@ -310,56 +310,136 @@ The brand logo - as default it will be placed to the left</p>
 <p>Select the smallest height sizing class for input fields: <code>.input-sm</code></p>
 
 <h3 id="alerts">Alerts</h3>
-<p>Bootstrap provides a collection of alerts for user feedback messages . By default, they follow the standard colors described in the <a href="#colors">colors section</a>.</p>
-
-<p>See <a href="http://getbootstrap.com/components/#alerts">Bootstrap/alerts</a> about how to use</p>
+<p>Bootstrap provides a collection of <a href="http://getbootstrap.com/components/#alerts">alerts</a> for user feedback messages. By default, they follow the colors described in the <a href="#colors">colors section</a>.</p>
 
 <h3 id="icons">Icons</h3>
-<p>Font Awesome is installed on BPP. Use these icon fonts whenever it makes sense and try to avoid images as they affect load times negatively. Also, using these fonts will maintain a consistent visual appearance.</p>
-
-<p>See <a href="http://fontawesome.io">Font Awesome</a> about how to use</p>
+<p><a href="http://fontawesome.io">Font Awesome</a> is implemented on BP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.</p>
 
 <h3 id="css-helpers">CSS HELPERS</h3>
 
-<h3 id="headers-and-copy">Headers and copy</h3>
+<h3 id="headers-and-text">Headers and text</h3>
 
-<p>Keep a clear hierarchy between different headers and copy. Each brand has a standard font that should be used on extensions as well to keep consistency.</p>
+<p>Keep a clear hierarchy between different headers and text. In general each site has a primary font and a secondary font, these will be applied through the header- and text classes.</p>
 
-<p>The base font of copy is 16px and uses absolute pixel sizes (not ems or pt).</p>
+<p>All font sizes are specified in pixels (not em or pt).</p>
 
-<p>Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and copy:</p>
+<p>Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and text:</p>
 
 <p><strong>Headers:</strong></p>
 
 <h1 class="header-primary">Header-primary</h1>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.header-primary</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-primary&quot;</span><span class="nt">&gt;</span>Header-primary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
+
 <h1 class="header-secondary">Header-secondary</h1>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.header-secondary</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-secondary&quot;</span><span class="nt">&gt;</span>Header-secondary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
+
 <h1 class="header-tertiary">Header-tertiary</h1>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.header-tertiary</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-tertiary&quot;</span><span class="nt">&gt;</span>Header-tertiary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
+
 <h1 class="header-quaternary">Header-quaternary</h1>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.header-primary</span>
-<span class="nc">.header-secondary</span>
-<span class="nc">.header-tertiary</span>
-<span class="nc">.header-quaternary</span></code></pre></div>
+<div class="highlight"><pre><code class="css"><span class="nc">.header-quaternary</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-quaternary&quot;</span><span class="nt">&gt;</span>Header-quaternary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
+
+<p>Example:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">”header-primary”</span><span class="nt">&gt;</span>A primary headline<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">”header-primary”</span><span class="nt">&gt;</span>A semantically secondary headline, that visually looks the same as a primary headline<span class="nt">&lt;/h2&gt;</span></code></pre></div>
 
-<p><strong>Copy:</strong></p>
+<p><strong>Text:</strong></p>
 
-<p class="copy">Copy</p>
-<p class="copy-distinct">Copy-distinct</p>
-<p class="copy-tiny">Copy-tiny</p>
-<p class="copy-note">Copy-note</p>
+<p class="text">Text</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.copy</span>
-<span class="nc">.copy-distinct</span> <span class="o">//</span><span class="nt">standard</span> <span class="nt">bold</span> <span class="nt">copy</span>
-<span class="nc">.copy-tiny</span> <span class="o">//</span><span class="nt">small</span> <span class="nt">copy</span>
-<span class="nc">.copy-note</span> <span class="o">//</span><span class="nt">small</span> <span class="nt">italic</span> <span class="nt">copy</span></code></pre></div>
+<div class="highlight"><pre><code class="css"><span class="nc">.text</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-distinct">Text-distinct</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-distinct</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-distinct&quot;</span><span class="nt">&gt;</span>Text-distinct<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-tiny">Text-tiny</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-tiny</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-tiny&quot;</span><span class="nt">&gt;</span>Text-tiny<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-note">Text-note</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-note</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-note&quot;</span><span class="nt">&gt;</span>Text-note<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-muted">Text-muted</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-muted</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>Text-muted<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-thin">Text-thin</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-thin</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-thin&quot;</span><span class="nt">&gt;</span>Text-thin<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-normal">Text-normal</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-normal</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-normal&quot;</span><span class="nt">&gt;</span>Text-normal<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-bold">Text-bold</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-bold</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-bold&quot;</span><span class="nt">&gt;</span>Text-bold<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-uppercase">Text-uppercase</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-uppercase</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-uppercase&quot;</span><span class="nt">&gt;</span>Text-uppercase<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-italic">Text-italic</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-italic</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-italic&quot;</span><span class="nt">&gt;</span>Text-italic<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="text-white">Text-white</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.text-white</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-white&quot;</span><span class="nt">&gt;</span>Text-white<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="reset-lineheight">Reset-lineheight</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.reset-lineheight</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-lineheight&quot;</span><span class="nt">&gt;</span>Reset-lineheight<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p class="reset-text-color">Reset-text-color</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.reset-text-color</span></code></pre></div>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-text-color&quot;</span><span class="nt">&gt;</span>Reset-text-color<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
 <p><strong>Wysiwyg:</strong></p>
 
-<p>For wysiwyg generated copy wrap the content inside class <code>.wysiwyg</code></p>
+<p>For wysiwyg generated text, wrap the content inside class <code>.wysiwyg</code></p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”wysiwyg”</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h2&gt;</span>My headline<span class="nt">&lt;/h2&gt;</span>
@@ -370,7 +450,7 @@ The brand logo - as default it will be placed to the left</p>
 
 <h3 id="colors">Colors</h3>
 
-<p>Most magazine sites rely on good photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand (see brand section for specifics). Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.</p>
+<p>Most magazine sites rely on quality photo material. Thus, the designer should provide images space to breath and avoid disturbing color schemes on the sites. As a rule of thumb, strictly keep the color palette to the one defined for each brand. Each brand will have a punch color, which can be used to accentuate elements, and some brands have a secondary color as well.</p>
 
 <p>The main color palette follows the Bootstrap standard colors:</p>
 
@@ -379,10 +459,10 @@ The brand logo - as default it will be placed to the left</p>
 <h4 class="brand-warning">Brand warning</h4>
 <h4 class="brand-danger">Brand danger</h4>
 
-<p>Links, buttons, alerts etc. will have the appropriate colors applied by default. If you need to color other elements, use the following classes:</p>
+<p>Links, buttons, alerts etc. will have the appropriate colors applied by default. To utilize the color scheme, use the following classes:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.brand-color</span> <span class="o">//</span><span class="nt">text</span> <span class="nt">color</span>
-<span class="nc">.brand-color-bg</span> <span class="o">//</span><span class="nt">background</span> <span class="nt">color</span>
+<div class="highlight"><pre><code class="css"><span class="nc">.brand-color</span>
+<span class="nc">.brand-color-bg</span>
 
 <span class="nc">.brand-danger</span>
 <span class="nc">.brand-danger-bg</span>
@@ -393,17 +473,17 @@ The brand logo - as default it will be placed to the left</p>
 <span class="nc">.brand-warning</span>
 <span class="nc">.brand-warning-bg</span></code></pre></div>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”brand-color-bg”</span><span class="nt">&gt;</span>
+<p>&lt;div class=”brand-color-bg”&gt;
 A container with the brand color as background
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+&lt;/div&gt;</p>
 
 <h4 id="widgets">Widgets</h4>
 
-<p>Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.</p>
+<p>Widgets form a central part on the BP platform as modules that can be placed around the site and on front pages.</p>
 
 <p>Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.</p>
 
-<p><code>.widget</code> use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element</p>
+<p><code>.widget</code> use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”widget”</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">”row”</span><span class="nt">&gt;</span>
