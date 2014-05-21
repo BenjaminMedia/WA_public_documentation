@@ -502,7 +502,7 @@ Use the `.advertorial-stamp` class to add an advertorial badge on, for instance,
   <div class='advertorial-stamp'>Badge</div>
   <img src='http://placehold.it/640x450'>
 </div>
-test
+<p>test</p>
 {{ endraw }}
 
 {% highlight html %}
