@@ -195,18 +195,17 @@
 
 <h3 id="visual-patterns">Visual patterns</h3>
 
-<p>The platform is made fully responsive enabled by the <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>.
-The responsive sites follow the Mobile First paradigm meaning that the mobile adaption is the default. Preferably, the same content should be available across devices while the presentation ought to be optimized for the specific screen size.</p>
+<p>BP is made fully responsive enabled by the <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>.</p>
 
 <p>The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.</p>
 
 <p><img src="images/fullwidth.jpg" alt="Horisontal Ordering" /></p>
 
-<p>Most of the Bonnier products have access to good photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.</p>
+<p>Most of the Bonnier products have access to quality photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention from the content. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.</p>
 
 <h3 id="header--footer">Header &amp; footer</h3>
 
-<p>The WA header and footer, which may be imported on external sites, consists of…
+<p>The BP header and footer, which may be imported on external sites, consists of…
 A full width banner and optional side banners (horseshoe)
 The brand logo - as default it will be placed to the left</p>
 
@@ -225,13 +224,13 @@ The brand logo - as default it will be placed to the left</p>
 <h3 id="your-area-of-control">Your area of control:</h3>
 <p><img src="images/areaofcontrol.jpg" alt="Horisontal Ordering" /></p>
 
-<h4 id="navigation">Navigation</h4>
+<h3 id="navigation">Navigation</h3>
 
 <p>The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.</p>
 
 <h3 id="included-in-head">Included in <code>&lt;head&gt;</code></h3>
 
-<p>BPP uses the HTML5 doctype:</p>
+<p>BP uses the HTML5 doctype:</p>
 
 <div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span></code></pre></div>
 
@@ -245,13 +244,13 @@ The brand logo - as default it will be placed to the left</p>
 </ul>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1;&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1;&quot;</span><span class="nt">&gt;</span></code></pre></div>
 
 <h3 id="bootstrap">Bootstrap</h3>
 
-<p>BPP is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. that provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
+<p>BP is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
 
-<p>BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:</p>
+<p>BP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:</p>
 
 <ul>
   <li>mixins</li>
@@ -275,38 +274,38 @@ The brand logo - as default it will be placed to the left</p>
   <li>responsive-utilities</li>
 </ul>
 
-<p>See the full list of available Bootstrap elements <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">here</a>, and let us know if you think something is missing</p>
+<p>If you wish that other <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">bootstrap elements</a> are made available to you, please let us know.</p>
 
 <h4 id="grid">Grid</h4>
 
-<p>The BPP platform uses the 12 column responsive grid provided by Bootstrap.</p>
+<p>The BP platform uses the 12 column <a href="http://getbootstrap.com/css/#grid">responsive grid</a> provided by Bootstrap.</p>
 
-<p>The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). In most cases these breakpoints will be effectuated as follows:</p>
+<p>The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). Currently that the large breakpoint still exists in our code base. We currently don’t use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px.</p>
+
+<p>In most cases these breakpoints will be effectuated as follows:</p>
 
 <ul>
   <li>xs:   smartphone</li>
   <li>sm:   tablet portrait</li>
   <li>md:   13” laptop</li>
-  <li>lg:   desktop</li>
+  <li>
+    <s>lg:   desktop</s>
+  </li>
 </ul>
 
 <p>Note that Bootstrap is a Mobile First framework meaning that the xs-breakpoint is the default. This means that media query exceptions should be applied to the larger representations and not the other way around.</p>
 
-<p>See the Bootstrap documentation on how to use the <a href="http://getbootstrap.com/css/#grid">grid classes</a></p>
-
 <h3 id="buttons">Buttons</h3>
-<p>Use the Bootstrap buttons when a link needs special attention:</p>
+<p>Use the <a href="http://getbootstrap.com/css/#buttons">Bootstrap buttons</a> when a link needs special attention:</p>
 
 <p>Button colors follow the overall site colors meaning that, for instance, the primary button has the primary brand color.</p>
-
-<p>See <a href="http://getbootstrap.com/css/#buttons">Bootstrap/buttons</a> about how to use</p>
 
 <p>The Bootstrap buttons have been extended with a facebook styled button enabled by class <code>.btn-facebook</code> :</p>
 
 <p>&lt;button class="btn-facebook"&gt;Login med facebook&lt;/button&gt;</p>
 
 <h3 id="forms">Forms</h3>
-<p>Use Bootstrap’s form classes to style forms: <a href="http://getbootstrap.com/css/#forms">http://getbootstrap.com/css/#forms</a></p>
+<p>Use Bootstrap’s form classes to style <a href="http://getbootstrap.com/css/#forms">forms</a>.</p>
 
 <p>Select the smallest height sizing class for input fields: <code>.input-sm</code></p>
 
