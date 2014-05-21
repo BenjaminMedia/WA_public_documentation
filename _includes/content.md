@@ -2,11 +2,15 @@
 Introduction
 ---
 
-This document describes the overall design patterns of the Bonnier Publications web site platform (BPP).
+This document describes the overall design patterns of the Bonnier platform (BP).
 
-The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BPP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
+The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
 
 External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.
+
+### Technical patterns
+
+The BP is build with [object oriented CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.
 
 ### Visual patterns
 

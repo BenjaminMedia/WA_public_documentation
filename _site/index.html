@@ -34,6 +34,9 @@
             <a href="#technical_patterns">TECHNICAL PATTERNS</a>
           </li>
           <li>
+            <a href="#file_structure">FILESTRUCTURE</a>
+          </li>
+          <li>
             <a href="#visual_patterns">VISUAL PATTERNS</a>
           </li>
           <li>
@@ -110,11 +113,15 @@
 <pre><code>      --- Introduction ---
 </code></pre>
 
-<p>This document describes the overall design patterns of the Bonnier Publications web site platform (BPP).</p>
+<p>This document describes the overall design patterns of the Bonnier platform (BP).</p>
 
-<p>The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BPP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.</p>
+<p>The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.</p>
 
 <p>External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.</p>
+
+<h3 id="technical-patterns">Technical patterns</h3>
+
+<p>The BP is build with <a href="http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">object oriented CSS</a> (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.</p>
 
 <h3 id="visual-patterns">Visual patterns</h3>
 
