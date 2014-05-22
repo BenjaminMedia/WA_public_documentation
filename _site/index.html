@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Wa public documentation : Style guide and public documentation for the new White Album platform" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="http://whitealbum-staging-frontend.herokuapp.com/assets/woman-8a6fb9eb0f662b75de74ea36bf5849d4.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://whitealbum-staging-articles.herokuapp.com//assets/mmm-2f7abf29ffa25c25156556653db385cb.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/theme.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/custom.css">
 
@@ -88,6 +88,9 @@
             <a href="#gutters">Gutters</a>
           </li>
           <li>
+            <a href="#newspaper_helper">Newspaper helper</a>
+          </li>
+          <li>
             <a href="#misc_helpers">Misc helpers</a>
           </li>
           <li>
@@ -132,7 +135,7 @@
   |      |
   |      |-- base
   |      |-- site names (eg. costume)
-  | 
+  |
   |-- javascripts
   |      |
   |      |-- frontend.js
@@ -162,7 +165,7 @@
          |     |    |
          |     |    |-- partials
          |     |    |
-         |     |    |-- base.css.scss        
+         |     |    |-- base.css.scss
          |     |
          |     |-- [one for each sub-project]
          |                    |
@@ -570,6 +573,31 @@ A container with the brand color as background
 <span class="nt">&lt;/h2&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;gutter-top-lg&quot;</span><span class="nt">&gt;</span>
   Content with a large margin to the header above
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h3 id="newspaper-helper">Newspaper helper</h3>
+
+<p>Use this helper when you want content to be shown in columns. It automaticly justifies the content in each column.
+Set you rows to be 1, 2 or 3 - it will automaticly go full width on mobile. Width for columns is 200px, so if your div is less than the value for all columns it will choose the next colum number.</p>
+
+<p>Example:</p>
+
+<div class="newspaper col-2">
+  Semiotics irony Pinterest, plaid cornhole selfies post-ironic tousled chambray. Synth pop-up Cosby sweater, messenger bag ennui biodiesel letterpress leggings Williamsburg mumblecore paleo scenester. Flexitarian quinoa pickled meggings hoodie typewriter.
+</div>
+
+<p>Markup: use col-1, col-2 or col-3</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;newspaper col-1&quot;</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;newspaper col-2&quot;</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;newspaper col-3&quot;</span><span class="nt">&gt;</span>
+  ...
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <h4 id="misc-helpers">Misc helpers</h4>
