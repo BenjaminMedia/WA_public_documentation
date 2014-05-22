@@ -22,7 +22,7 @@ assets
   |      |
   |      |-- base
   |      |-- site names (eg. costume)
-  | 
+  |
   |-- javascripts
   |      |
   |      |-- frontend.js
@@ -52,7 +52,7 @@ assets
          |     |    |
          |     |    |-- partials
          |     |    |
-         |     |    |-- base.css.scss        
+         |     |    |-- base.css.scss
          |     |
          |     |-- [one for each sub-project]
          |                    |
@@ -567,14 +567,14 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 
 Example:
 
-{% raw %}
+{{ raw }}
 <h2 class="header-tertiary gutter-reset">
   A header without margin or padding
 </h2>
 <div class="gutter-top-lg">
   Content with a large margin to the header above
 </div>
-{% endraw %}
+{{ endraw }}
 
 {% highlight html %}
 <h2 class="header-tertiary gutter-reset">
@@ -584,6 +584,37 @@ Example:
   Content with a large margin to the header above
 </div>
 {% endhighlight %}
+
+
+### Newspaper helper
+
+Use this helper when you want content to be shown in columns. It automaticly justifies the content in each column.
+Set you rows to be 1, 2 or 3 - it will automaticly go full width on mobile. Width for columns is 200px, so if your div is less than the value for all columns it will choose the next colum number.
+
+Example:
+
+{{ raw }}
+<div class="newspaper col-2">
+  Semiotics irony Pinterest, plaid cornhole selfies post-ironic tousled chambray. Synth pop-up Cosby sweater, messenger bag ennui biodiesel letterpress leggings Williamsburg mumblecore paleo scenester. Flexitarian quinoa pickled meggings hoodie typewriter.
+</div>
+{{ endraw }}
+
+Markup: use col-1, col-2 or col-3
+
+{% highlight html %}
+<div class="newspaper col-1">
+  ...
+</div>
+
+<div class="newspaper col-2">
+  ...
+</div>
+
+<div class="newspaper col-3">
+  ...
+</div>
+{% endhighlight %}
+
 
 #### Misc helpers
 
