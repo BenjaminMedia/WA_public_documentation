@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Wa public documentation : Style guide and public documentation for the new White Album platform" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="http://whitealbum-staging-articles.herokuapp.com//assets/mmm-2f7abf29ffa25c25156556653db385cb.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/whitealbum.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/theme.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/custom.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <title>Style Guide</title>
   </head>
@@ -26,179 +28,30 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <nav class="navigation inner">
-        <ul>
-          <li>
-            <a href="#introduction">INTRODUCTION</a>
-          </li>
-          <li>
-            <a href="#technical_patterns">TECHNICAL PATTERNS</a>
-          </li>
-          <li>
-            <a href="#file_structure">FILESTRUCTURE</a>
-          </li>
-          <li>
-            <a href="#visual_patterns">VISUAL PATTERNS</a>
-          </li>
-          <li>
-            <a href="#header__footer">Header & footer</a>
-          </li>
-          <li>
-            <a href="#navigation">Navigation</a>
-          </li>
-          <li>
-            <a href="#included_in_">INCLUDED IN HEAD</a>
-          </li>
-          <li>
-            <a href="#bootstrap">BOOTSTRAP</a>
-          </li>
-          <li>
-            <a href="#grid">Grid</a>
-          </li>
-          <li>
-            <a href="#buttons">Buttons</a>
-          </li>
-          <li>
-            <a href="#forms">Forms</a>
-          </li>
-          <li>
-            <a href="#alerts">Alerts</a>
-          </li>
-          <li>
-            <a href="#icons">Icons</a>
-          </li>
-          <li>
-            <a href="#css_helpers">CSS HELPERS</a>
-          </li>
-          <li>
-            <a href="#headers_and_text">Headers and text</a>
-          </li>
-          <li>
-            <a href="#colors">Colors</a>
-          </li>
-          <li>
-            <a href="#widgets">Widgets</a>
-          </li>
-          <li>
-            <a href="#badges">Badges</a>
-          </li>
-          <li>
-            <a href="#bootstrap_related">Bootstrap related</a>
-          </li>
-          <li>
-            <a href="#gutters">Gutters</a>
-          </li>
-          <li>
-            <a href="#newspaper_helper">Newspaper helper</a>
-          </li>
-          <li>
-            <a href="#misc_helpers">Misc helpers</a>
-          </li>
-          <li>
-            <a href="#javascript">JAVASCRIPT</a>
-          </li>
-          <li>
-            <a href="#data_attributes">Data attributes</a>
-          </li>
-          <li>
-            <a href="#testing">Plugins</a>
-          </li>
-          <li>
-            <a href="#testing">Testing</a>
-          </li>
-          <li>
-            <a href="#components">Components</a>
-          </li>
-        </ul>
+        <div data-page-sidenav>
+
+        </div>
       </nav>
-      <section id="main_content" class="inner">
+      <section id="main_content" class="inner" data-page-content>
         
         
-<pre><code>      --- Introduction ---
-</code></pre>
+<h3 id="introduction">Introduction</h3>
 
-<p>This document describes the overall design patterns of the Bonnier platform (BP).</p>
+<p>This document describes the overall design patterns of the Bonnier Publications Platform (BPP).</p>
 
-<p>The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.</p>
+<p>The heart of BPP is custom CMS White Album built with Ruby on Rails, which forms the basis of core HTML and CSS that external developers can access through an api. White Album is a “white label” CMS that most Bonnier sites use. All sites share a common core of assets, while individual skin-files enable stylesheet customization according to brand.</p>
 
 <p>External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.</p>
 
 <h3 id="technical-patterns">Technical patterns</h3>
 
-<p>The BP is build with <a href="http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">object oriented CSS</a> (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.</p>
+<p>BPP is build with <a href="http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">object oriented CSS</a> (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.</p>
 
-<h3 id="file-structure">File structure</h3>
-
-<div class="highlight"><pre><code class="html">assets
-  |
-  |-- fonts
-  |-- images
-  |      |
-  |      |-- base
-  |      |-- site names (eg. costume)
-  |
-  |-- javascripts
-  |      |
-  |      |-- frontend.js
-  |      |-- modules
-  |      |-- components
-  |      |-- external
-  |      |-- plugins
-  |      |-- specific
-  |
-  |-- stylesheets
-         |
-         |-- global.css.scss
-         |-- global
-         |     |
-         |     |-- site
-         |     |    |
-         |     |    |-- modules
-         |     |    |      |
-         |     |    |      |-- _variables.css.scss
-         |     |    |      |-- _mixins.css.scss
-         |     |    |
-         |     |    |-- breakpoints
-         |     |    |       |
-         |     |    |       |-- _small.css.scss
-         |     |    |       |-- _medium.css.scss
-         |     |    |       |-- _large.css.scss
-         |     |    |
-         |     |    |-- partials
-         |     |    |
-         |     |    |-- base.css.scss
-         |     |
-         |     |-- [one for each sub-project]
-         |                    |
-         |                    |-- breakpoints
-         |                    |-- modules
-         |                    |-- partials
-         |                    |-- base.css.scss
-         |
-         |-- skins
-         |     |
-         |     |-- site names (eg. costume)
-         |     |       |
-         |     |       |-- modules
-         |     |       |      |
-         |     |       |      |-- _variables.css.scss
-         |     |       |
-         |     |       |-- partials
-         |     |       |-- breakpoints
-         |     |       |       |
-         |     |       |       |-- _small.css.scss
-         |     |       |       |-- _medium.css.scss
-         |     |       |       |-- _large.css.scss
-         |     |       |
-         |     |       |-- base.css.scss
-         |     |
-         |     |-- _variables.css.scss
-         |     |-- _vendors.css.scss
-         |
-         |-- _site_name.css.scss (eg. _costume.css.scss)</code></pre></div>
+<p>Furthermore, BPP aims to follow the <a href="http://mdo.github.io/code-guide/">code guidelines and formatting</a> used by the Bootstrap community.</p>
 
 <h3 id="visual-patterns">Visual patterns</h3>
 
-<p>BP is made fully responsive enabled by the <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>.</p>
+<p>BPP is responsive enabled by the <a href="http://getbootstrap.com/">Bootstrap CSS-framework</a>.</p>
 
 <p>The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.</p>
 
@@ -208,55 +61,59 @@
 
 <h3 id="header--footer">Header &amp; footer</h3>
 
-<p>The BP header and footer, which may be imported on external sites, consists of…
-A full width banner and optional side banners (horseshoe)
-The brand logo - as default it will be placed to the left</p>
+<p>The BPP header and footer, which may be imported on external sites, consists of…</p>
 
 <ul>
+  <li>A full width banner and optional side banners (horseshoe)</li>
+  <li>The brand logo</li>
   <li>magazine subscription offer to the right</li>
   <li>navigation menu with dropdown submenu</li>
   <li>footer containing background information about the publisher and links to related sites</li>
 </ul>
 
-<h3 id="header">Header:</h3>
+<h4 id="header">Header:</h4>
 <p><img src="images/header.png" alt="Horisontal Ordering" /></p>
 
-<h3 id="footer">Footer:</h3>
+<h4 id="footer">Footer:</h4>
 <p><img src="images/footer.png" alt="Horisontal Ordering" /></p>
 
-<h3 id="your-area-of-control">Your area of control:</h3>
+<h4 id="your-area-of-control">Your area of control:</h4>
 <p><img src="images/areaofcontrol.jpg" alt="Horisontal Ordering" /></p>
 
 <h3 id="navigation">Navigation</h3>
 
 <p>The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.</p>
 
-<h3 id="included-in-head">Included in <code>&lt;head&gt;</code></h3>
+<h3 id="included-in-head">Included in head</h3>
 
-<p>BP uses the HTML5 doctype:</p>
+<p>BPP uses HTML5 doctype:</p>
 
-<div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span></code></pre></div>
 
 <p>The <code>&lt;head&gt;</code> will further include :</p>
 
 <ul>
+  <li>WhiteAlbum CSS</li>
   <li>Twitter Bootstrap</li>
-  <li>jQuery v. 1.10.2</li>
   <li>Font Awesome</li>
-  <li>Relevant meta tags:</li>
+  <li>Useful meta tags:</li>
 </ul>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1;&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1;&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span><span class="s">&quot;[site-url]&quot;</span> <span class="na">data-target=</span><span class="s">&quot;facebook-url&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span> <span class="na">content=</span><span class="s">&quot;[site-name]&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;fb:app_id&quot;</span> <span class="na">content=</span><span class="s">&quot;[site-facebook-id]&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="css--markup">CSS &amp; MARKUP</h3>
 
 <h3 id="bootstrap">Bootstrap</h3>
 
-<p>BP is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
+<p>BPP is based on the CSS-framework <a href="http://getbootstrap.com/">Twitter Bootstrap</a>. That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.</p>
 
-<p>BP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:</p>
+<p>BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:</p>
 
 <ul>
-  <li>mixins</li>
   <li>normalize</li>
   <li>print</li>
   <li>scaffolding</li>
@@ -266,6 +123,7 @@ The brand logo - as default it will be placed to the left</p>
   <li>tables</li>
   <li>forms</li>
   <li>buttons</li>
+  <li>progress-bars</li>
   <li>pagination</li>
   <li>pager</li>
   <li>labels</li>
@@ -273,23 +131,24 @@ The brand logo - as default it will be placed to the left</p>
   <li>panels</li>
   <li>component-animations</li>
   <li>alerts</li>
+  <li>navbar</li>
+  <li>navs</li>
+  <li>dropdowns</li>
   <li>utilities</li>
   <li>responsive-utilities</li>
 </ul>
 
-<p>If you wish that other <a href="https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss">bootstrap elements</a> are made available to you, please let us know.</p>
-
 <h3 id="grid">Grid</h3>
 
-<p>The BP platform uses the 12 column <a href="http://getbootstrap.com/css/#grid">responsive grid</a> provided by Bootstrap.</p>
+<p>The BPP platform uses the 12 column <a href="http://getbootstrap.com/css/#grid">responsive grid</a> provided by Bootstrap.</p>
 
-<p>The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). Currently that the large breakpoint still exists in our code base. We currently don’t use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px.</p>
+<p>The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). The large breakpoint still exists in our code base though we currently don’t use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px (Denmark) and 980px (Norway).</p>
 
 <p>In most cases these breakpoints will be effectuated as follows:</p>
 
 <ul>
   <li>xs:   smartphone</li>
-  <li>sm:   tablet portrait</li>
+  <li>sm:   tablet</li>
   <li>md:   13” laptop</li>
   <li>
     <s>lg:   desktop</s>
@@ -305,146 +164,114 @@ The brand logo - as default it will be placed to the left</p>
 
 <p>The Bootstrap buttons have been extended with a facebook styled button enabled by class <code>.btn-facebook</code> :</p>
 
-<p>&lt;button class="btn-facebook"&gt;Login med facebook&lt;/button&gt;</p>
+<p><a href="#" class="btn-facebook"> Login med facebook </a></p>
 
 <h3 id="forms">Forms</h3>
 <p>Use Bootstrap’s form classes to style <a href="http://getbootstrap.com/css/#forms">forms</a>.</p>
-
-<p>Select the smallest height sizing class for input fields: <code>.input-sm</code></p>
 
 <h3 id="alerts">Alerts</h3>
 <p>Bootstrap provides a collection of <a href="http://getbootstrap.com/components/#alerts">alerts</a> for user feedback messages. By default, they follow the colors described in the <a href="#colors">colors section</a>.</p>
 
 <h3 id="icons">Icons</h3>
-<p><a href="http://fontawesome.io">Font Awesome</a> is implemented on BP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.</p>
+<p><a href="http://fontawesome.io">Font Awesome</a> is implemented on BPP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.</p>
 
-<h3 id="css-helpers">CSS HELPERS</h3>
+<h3 id="helpers">HELPERS</h3>
 
-<h3 id="headers-and-text">Headers and text</h3>
+<h3 id="headers">Headers</h3>
 
-<p>Keep a clear hierarchy between different headers and text. In general each site has a primary font and a secondary font, these will be applied through the header- and text classes.</p>
+<p>Keep a clear hierarchy between different headers and text. In general, each site has a primary serif font and a primary sans-serif font, which are different from site to site. The fonts will be applied through the header- and text-classes.</p>
 
 <p>All font sizes are specified in pixels (not em or pt).</p>
 
-<p>Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and text:</p>
-
-<p><strong>Headers:</strong></p>
-
-<h1 class="header-primary">Header-primary</h1>
-
-<div class="highlight"><pre><code class="css"><span class="nc">.header-primary</span></code></pre></div>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-primary&quot;</span><span class="nt">&gt;</span>Header-primary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
-
-<h1 class="header-secondary">Header-secondary</h1>
-
-<div class="highlight"><pre><code class="css"><span class="nc">.header-secondary</span></code></pre></div>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-secondary&quot;</span><span class="nt">&gt;</span>Header-secondary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
-
-<h1 class="header-tertiary">Header-tertiary</h1>
-
-<div class="highlight"><pre><code class="css"><span class="nc">.header-tertiary</span></code></pre></div>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-tertiary&quot;</span><span class="nt">&gt;</span>Header-tertiary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
-
-<h1 class="header-quaternary">Header-quaternary</h1>
-
-<div class="highlight"><pre><code class="css"><span class="nc">.header-quaternary</span></code></pre></div>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;header-quaternary&quot;</span><span class="nt">&gt;</span>Header-quaternary<span class="nt">&lt;/h1&gt;</span></code></pre></div>
+<p>Use the tags h1, h2, h3, p etc. semantically and add the equivalent classes to style headers and text. Eg. Apply <code>&lt;h1&gt;</code> styles with <code>.h1</code> . This is useful if semantics and styling should be separated.</p>
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">”header-primary”</span><span class="nt">&gt;</span>A primary headline<span class="nt">&lt;/h1&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;h1&quot;</span><span class="nt">&gt;</span>A primary headline<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">”header-primary”</span><span class="nt">&gt;</span>A semantically secondary headline, that visually looks the same as a primary headline<span class="nt">&lt;/h2&gt;</span></code></pre></div>
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;.h1&quot;</span><span class="nt">&gt;</span>A semantically secondary headline, that visually looks the same as a primary headline<span class="nt">&lt;/h2&gt;</span></code></pre></div>
 
-<p><strong>Text:</strong></p>
+<h3 id="text">Text</h3>
 
-<p class="text">Text</p>
+<p>Use the following classes to achieve different styling of <code>&lt;p&gt;</code> tags:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text</span></code></pre></div>
+<p class="text-small gutter-top-lg">Text-small</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-small</span></code></pre></div>
 
-<p class="text-distinct">Text-distinct</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-small&quot;</span><span class="nt">&gt;</span>Text-small<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-distinct</span></code></pre></div>
+<p class="text-tiny gutter-top-lg">Text-tiny</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-distinct&quot;</span><span class="nt">&gt;</span>Text-distinct<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-tiny</span></code></pre></div>
 
-<p class="text-tiny">Text-tiny</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-tiny&quot;</span><span class="nt">&gt;</span>Text-tiny<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-tiny</span></code></pre></div>
+<p class="text-note gutter-top-lg">Text-note</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-tiny&quot;</span><span class="nt">&gt;</span>Text-tiny<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-note</span></code></pre></div>
 
-<p class="text-note">Text-note</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-note&quot;</span><span class="nt">&gt;</span>Text-note<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-note</span></code></pre></div>
+<p class="text-muted gutter-top-lg">Text-muted</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-note&quot;</span><span class="nt">&gt;</span>Text-note<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-muted</span></code></pre></div>
 
-<p class="text-muted">Text-muted</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>Text-muted<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-muted</span></code></pre></div>
+<p class="text-thin gutter-top-lg">Text-thin</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>Text-muted<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-thin</span></code></pre></div>
 
-<p class="text-thin">Text-thin</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-thin&quot;</span><span class="nt">&gt;</span>Text-thin<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-thin</span></code></pre></div>
+<p class="text-normal gutter-top-lg">Text-normal</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-thin&quot;</span><span class="nt">&gt;</span>Text-thin<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-normal</span></code></pre></div>
 
-<p class="text-normal">Text-normal</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-normal&quot;</span><span class="nt">&gt;</span>Text-normal<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-normal</span></code></pre></div>
+<p class="text-bold gutter-top-lg">Text-bold</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-normal&quot;</span><span class="nt">&gt;</span>Text-normal<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-bold</span></code></pre></div>
 
-<p class="text-bold">Text-bold</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-bold&quot;</span><span class="nt">&gt;</span>Text-bold<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-bold</span></code></pre></div>
+<p class="text-uppercase gutter-top-lg">Text-uppercase</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-bold&quot;</span><span class="nt">&gt;</span>Text-bold<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-uppercase</span></code></pre></div>
 
-<p class="text-uppercase">Text-uppercase</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-uppercase&quot;</span><span class="nt">&gt;</span>Text-uppercase<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-uppercase</span></code></pre></div>
+<p class="text-italic gutter-top-lg">Text-italic</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-uppercase&quot;</span><span class="nt">&gt;</span>Text-uppercase<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-italic</span></code></pre></div>
 
-<p class="text-italic">Text-italic</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-italic&quot;</span><span class="nt">&gt;</span>Text-italic<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-italic</span></code></pre></div>
+<p class="text-white gutter-top-lg">Text-white</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-italic&quot;</span><span class="nt">&gt;</span>Text-italic<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.text-white</span></code></pre></div>
 
-<p class="text-white">Text-white</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-white&quot;</span><span class="nt">&gt;</span>Text-white<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.text-white</span></code></pre></div>
+<p class="reset-lineheight gutter-top-lg">Reset-lineheight</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-white&quot;</span><span class="nt">&gt;</span>Text-white<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.reset-lineheight</span></code></pre></div>
 
-<p class="reset-lineheight">Reset-lineheight</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-lineheight&quot;</span><span class="nt">&gt;</span>Reset-lineheight<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.reset-lineheight</span></code></pre></div>
+<p class="reset-text-color gutter-top-lg">Reset-text-color</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-lineheight&quot;</span><span class="nt">&gt;</span>Reset-lineheight<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.reset-text-color</span></code></pre></div>
 
-<p class="reset-text-color">Reset-text-color</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-text-color&quot;</span><span class="nt">&gt;</span>Reset-text-color<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.reset-text-color</span></code></pre></div>
+<h3 id="wysiwyg">Wysiwyg</h3>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;reset-text-color&quot;</span><span class="nt">&gt;</span>Reset-text-color<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<p>For wysiwyg generated text, wrap the content inside <code>.wysiwyg</code></p>
 
-<p><strong>Wysiwyg:</strong></p>
-
-<p>For wysiwyg generated text, wrap the content inside class <code>.wysiwyg</code></p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wysiwyg&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wysiwyg&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h2&gt;</span>My headline<span class="nt">&lt;/h2&gt;</span>
   <span class="nt">&lt;p&gt;</span>Text inserted by a WYSIWYG editor<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;blockquote&gt;</span>Which is neatly formatted to the look and feel of an article<span class="nt">&lt;/blockquote&gt;</span>
@@ -464,7 +291,7 @@ The brand logo - as default it will be placed to the left</p>
 
 <p>Links, buttons, alerts etc. will have the appropriate colors applied by default. To utilize the color scheme, use the following classes:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.brand-color</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.brand-color</span>
 <span class="nc">.brand-color-bg</span>
 
 <span class="nc">.brand-danger</span>
@@ -476,19 +303,19 @@ The brand logo - as default it will be placed to the left</p>
 <span class="nc">.brand-warning</span>
 <span class="nc">.brand-warning-bg</span></code></pre></div>
 
-<div class="brand-color-bg">
-A container with the brand color as background
+<div class="brand-color-bg gutter-top-lg" style="padding: 10px 20px;">
+<div class="h3 text-white">A container with the brand color as background</div>
 </div>
 
-<h4 id="widgets">Widgets</h4>
+<h3 id="widgets">Widgets</h3>
 
-<p>Widgets form a central part on the BP platform as modules that can be placed around the site and on front pages.</p>
+<p>Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.</p>
 
 <p>Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.</p>
 
-<p><code>.widget</code> use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.</p>
+<p>use <code>.widget</code> on the parent of all widgets of the site, which adds a container and a (white) background-color to the element.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-12&quot;</span><span class="nt">&gt;</span>
       Widget content
@@ -496,36 +323,24 @@ A container with the brand color as background
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<h3 id="badges">Badges</h3>
-<p>Use the <code>.advertorial-stamp</code> class to add an advertorial badge on, for instance, the article lead image:</p>
+<h3 id="labels">Labels</h3>
+<p>Use <code>.content-label</code> on widget thumbnails and lead images if needed. The background-color and text can be changed to whatever is appropriate for the specific label. However, the placement must always be at the top in order to comply with Norwegian legislation.</p>
 
 <div class="relative gutter-bottom">
-  <div class="advertorial-stamp">Badge</div>
+  <div class="content-label">ANNONCE</div>
   <img src="http://placehold.it/640x450" />
 </div>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bounding-box&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;advertorial-stamp&quot;</span><span class="nt">&gt;</span>ANNONCE<span class="nt">&lt;/div&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;relative&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content-label&quot;</span><span class="nt">&gt;</span>ANNONCE<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;image name&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<h4 id="bootstrap-related">Bootstrap related</h4>
-
-<p>These classes group Bootstrap’s responsive hidden-classes:</p>
-
-<div class="highlight"><pre><code class="css"><span class="nc">.hidden-xs-sm</span>
-<span class="nc">.visible-xs-sm</span>
-<span class="nc">.hidden-md-lg</span>
-<span class="nc">.visible-md-lg</span>
-<span class="nc">.hidden</span></code></pre></div>
-
-<p>Use them like Bootstrap’s <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utilities</a></p>
-
-<h4 id="gutters">Gutters</h4>
+<h3 id="gutters">Gutters</h3>
 
 <p>Use these gutter classes to add spacing between elements or to reset margin and padding on elements:</p>
 
-<div class="highlight"><pre><code class="css"><span class="c">/* resets */</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* resets */</span>
 <span class="nc">.gutter-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">all</span> <span class="nt">gutters</span>
 <span class="nc">.gutter-vertical-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">top</span> <span class="nt">and</span> <span class="nt">bottom</span> <span class="nt">gutters</span>
 <span class="nc">.gutter-top-reset</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">top</span> <span class="nt">gutter</span>
@@ -535,7 +350,6 @@ A container with the brand color as background
 <span class="nc">.reset-padding</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">all</span> <span class="nt">padding</span>
 <span class="nc">.reset-padding-left</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">left</span> <span class="nt">padding</span>
 <span class="nc">.reset-padding-right</span> <span class="o">//</span><span class="nt">reset</span> <span class="nt">right</span> <span class="nt">padding</span>
-
 
 <span class="c">/* vertical */</span>
 <span class="nc">.gutter-vertical</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutters</span> <span class="nt">top</span> <span class="nt">and</span> <span class="nt">bottom</span>
@@ -559,52 +373,39 @@ A container with the brand color as background
 <span class="c">/* right */</span>
 <span class="nc">.gutter-right</span> <span class="o">//</span><span class="nt">add</span> <span class="nt">gutter</span> <span class="nt">right</span></code></pre></div>
 
-<p>Example:</p>
+<h4 id="example">Example:</h4>
 
-<h2 class="header-tertiary gutter-reset">
-  A header without margin or padding
-</h2>
-<div class="gutter-top-lg">
-  Content with a large margin to the header above
+<div style="border: 1px solid black; padding: 10px;" class="gutter-bottom">
+  <h2 class="header-tertiary gutter-reset">
+    A header without margin or padding
+  </h2>
+  <div class="gutter-top-lg">
+    Content with a large margin to the header above
+  </div>
 </div>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;header-tertiary gutter-reset&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;header-tertiary gutter-reset&quot;</span><span class="nt">&gt;</span>
   A header without margin or padding
 <span class="nt">&lt;/h2&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;gutter-top-lg&quot;</span><span class="nt">&gt;</span>
   Content with a large margin to the header above
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<h3 id="newspaper-helper">Newspaper helper</h3>
+<h3 id="visibility">Visibility</h3>
 
-<p>Use this helper when you want content to be shown in columns. It automaticly justifies the content in each column.
-Set you rows to be 1, 2 or 3 - it will automaticly go full width on mobile. Width for columns is 200px, so if your div is less than the value for all columns it will choose the next colum number.</p>
+<p>These classes group Bootstrap’s responsive hidden-classes:</p>
 
-<p>Example:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.hidden-xs-sm</span>
+<span class="nc">.visible-xs-sm</span>
+<span class="nc">.hidden-md-lg</span>
+<span class="nc">.visible-md-lg</span>
+<span class="nc">.hidden</span></code></pre></div>
 
-<div class="newspaper col-2">
-  Semiotics irony Pinterest, plaid cornhole selfies post-ironic tousled chambray. Synth pop-up Cosby sweater, messenger bag ennui biodiesel letterpress leggings Williamsburg mumblecore paleo scenester. Flexitarian quinoa pickled meggings hoodie typewriter.
-</div>
+<p>Use them like Bootstrap’s <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utilities</a></p>
 
-<p>Markup: use col-1, col-2 or col-3</p>
+<h3 id="micro-helpers">Micro helpers</h3>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;newspaper col-1&quot;</span><span class="nt">&gt;</span>
-  ...
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;newspaper col-2&quot;</span><span class="nt">&gt;</span>
-  ...
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;newspaper col-3&quot;</span><span class="nt">&gt;</span>
-  ...
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-<h4 id="misc-helpers">Misc helpers</h4>
-
-<p>Simple helper classes that do what the title says:</p>
-
-<div class="highlight"><pre><code class="css"><span class="c">/* Widths */</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Widths */</span>
 <span class="nc">.full-width</span>
 <span class="nc">.max-full-width</span>
 
@@ -625,131 +426,41 @@ Set you rows to be 1, 2 or 3 - it will automaticly go full width on mobile. Widt
 <span class="nc">.block</span>
 <span class="nc">.inline</span>
 <span class="nc">.inline-block</span>
-<span class="nc">.bp-hide</span> <span class="c">/* This is a temporary name, until we update to Bootstrap 3.0.1 */</span>
+<span class="nc">.bp-hide</span> <span class="o">//</span> <span class="nt">This</span> <span class="nt">is</span> <span class="nt">a</span> <span class="nt">temporary</span> <span class="nt">name</span><span class="o">,</span> <span class="nt">until</span> <span class="nt">we</span> <span class="nt">update</span> <span class="nt">Boostrap</span>
 
-<span class="c">/* Misc */</span>
+<span class="c">/* Additional */</span>
 <span class="nc">.hide-background</span>
 <span class="nc">.pointer</span>
-<span class="nc">.horizontal-scroll</span>
-<span class="nc">.ellipsis</span>
 <span class="nc">.vertical-align-top</span>
 <span class="nc">.vertical-align-middle</span>
 <span class="nc">.vertical-align-bottom</span></code></pre></div>
 
-<h3 id="javascript">JavaScript</h3>
+<h3 id="misc-helpers">Misc helpers</h3>
 
-<p>BP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Vertical centering using flexbox */</span>
+<span class="nc">.middle</span>
 
-<p>Scripts on the platform are minified and delivered through Rails 4’s asset pipeline meaning that all scripts are available anywhere and don’t need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.</p>
+<span class="c">/* Apply to wrapper with a nested class named .inner to create horizontal scroll effect */</span>
+<span class="nc">.horizontal-scroll</span>
 
-<p>Example:</p>
+ <span class="c">/* Add to text-container with set width to create ellipsis cutoff */</span>
+<span class="nc">.ellipsis</span>
 
-<div class="highlight"><pre><code class="javascript"><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-component=&quot;element&quot;]&#39;</span><span class="p">).</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">runFunction</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
+ <span class="c">/* Add on image to make it grayscale */</span>
+<span class="nc">.grayscale</span></code></pre></div>
 
-<h4 id="data-attributes">Data attributes</h4>
-<p>BP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.</p>
+<h3 id="caveats">Caveats</h3>
 
-<p><strong>Example:</strong></p>
+<p>White Album uses the OOCSS approach, but also has customized modules that fills up the global name space. Therefore, be careful not to overwrite any of the following modules (and related sub modules):</p>
 
-<p>Markup:</p>
+<p><code>.banner</code> <code>.horseshoe</code> <code>.takerover</code> <code>.gallery</code> <code>.article</code> <code>.blog</code> <code>.category</code> <code>.contestants</code> <code>.category</code> <code>.footer</code> <code>.logo</code> <code>.nav</code> <code>.navbar</code> <code>.search</code> <code>.sticky-menu</code> <code>.page</code> <code>.permission</code> <code>.polls</code> <code>.quiz</code> <code>.abo-offer</code> <code>.calendar</code> <code>.content-in-rows</code> <code>.fact-box</code> <code>.filtered-search</code> <code>.full-width-content</code> <code>.widget</code> <code>.linklist</code> <code>.media</code> <code>.video</code> <code>.mobile</code> <code>.newsletter-signup</code> <code>.rotator</code> <code>.social-share</code> <code>.standard</code> <code>.themebox</code> <code>.wg</code></p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">data-toggle=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span></code></pre></div>
-
-<p>Javascript:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-toggle=&quot;button&quot;]&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">doSomething</span><span class="p">);</span></code></pre></div>
-
-<h4 id="plugins">Plugins</h4>
-
-<p>BP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.</p>
-
-<p><strong>$.checkRegex</strong></p>
-
-<p>Simple frontend regex script that returns true or false. Use it like this: <code>$.checkRegex(stringToCheck, 'pattern');</code></p>
-
-<p>Available patterns: numberIncluded, onlyNumbers, onlyLetters, hasLetters, isEmail, isImage, onlySpaces</p>
-
-<p><strong>$.breakpoints</strong></p>
-
-<p>Checks the window width and returns the breakpoint as a string <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>. Use it as it is, e.g.:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">breakpoint</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;md&#39;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">doSomething</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-
-<p><strong>$.isTouchDevice</strong></p>
-
-<p>Detects if the site is accessed with a touch device. Returns true/false</p>
-
-<p><strong>$.extractSuffix</strong></p>
-
-<p>Splits a filename and returns the suffix as a string. For instance: <code>$.extractSuffix('image.png')</code> returns <code>png</code>.</p>
-
-<h4 id="testing">Testing</h4>
-
-<p>All plugins are unit tested with <a href="http://jasmine.github.io/2.0/introduction.html">Jasmine.js</a>. The testing suite is only available internally, but we strongly encourage external developers to unit test scripts.</p>
-
-<h4 id="components">Components</h4>
-
-<p>BP extends Bootstrap’s JavaScript components with a suite of features that can be initialized using data-attributes:</p>
-
-<p><strong>Image rotator</strong></p>
-
-<p>Easily create an image rotator by adding <code>data-component="rotator"</code> to a set of images with the following structure:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">data-component=</span><span class="s">&quot;rotator&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-      <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;figure&gt;</span>
-          <span class="nt">&lt;figcaption&gt;</span>
-          <span class="nt">&lt;/figcaption&gt;</span>
-        <span class="nt">&lt;/figure&gt;</span>
-      <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-<p><strong>Modal image</strong></p>
-
-<p>Toggle a large version of any image to open in a modal. Initiate with <code>data-toggle="modal-image"</code>and provide a path to the the large scale image in <code>data-image-lg="image-url"&gt;</code></p>
-
-<p>Example:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.jpg&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;modal-image&quot;</span> <span class="na">data-image-lg=</span><span class="s">&quot;image-large.jpg&quot;</span><span class="nt">&gt;</span></code></pre></div>
-
-<p><strong>Simple form validation</strong></p>
-
-<p>The simple form validation component is, as the title indicates, useful to validate small and simple forms. To use it, add <code>data-regex</code>with a pattern (see list below) and <code>data-error-msg</code> with an error message to the input field that needs checked. On the submit button add <code>data-toggle="check-regex"</code>, and on the same DOM-level place a container with <code>data-toggle="alert-danger"</code> to hold the error messages:</p>
-
-<p>Example:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;form&gt;</span>
-  <span class="nt">&lt;input</span>
-    <span class="na">placeholder=</span><span class="s">&quot;Telefonnummer&quot;</span>
-    <span class="na">data-regex=</span><span class="s">&quot;phone&quot;</span>
-    <span class="na">data-error-msg=</span><span class="s">&quot;Skal indeholde otte tal uden mellemrum&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-danger&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;alert-danger&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Submit&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;check-regex&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
-
-<p>Available patterns:</p>
-
-<p><code>data-regex="phone"</code>: Checks if the input is a number of 8 digits without spaces</p>
-
-<p><code>data-regex="name"</code>: Checks if the input only has letters</p>
-
-<p><code>data-regex="email"</code>: Checks if the input is an email address</p>
-
-<p><code>data-regex="is-adult"</code>: Checks the difference between the current year (2014) and the input year (e.g. 1984) and whether it’s more than 18 years ago</p>
-
-<p><strong>Tooltip</strong></p>
-
-<p>Initializes Bootstrap’s Tooltip plugin <code>$('[data-toggle="tooltip"]').tooltip();</code></p>
+<p>We motivate external partners to namespace all custom CSS with an app-specific prefix to avoid clashes <code>.app-classname</code></p>
 
 
       </section>
     </div>
 
+  <script src="/javascripts/sidenav.js"></script>
   </body>
 </html>
