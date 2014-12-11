@@ -1,92 +1,21 @@
----
-Introduction
----
 
-This document describes the overall design patterns of the Bonnier platform (BP).
+### Introduction
 
-The White Album CMS forms the basis of the core HTML, CSS and JavaScript of the BP that external developers can access through an api. White Album is a “white label” CMS that mainly Benjamin Media and Bonnier Media Norway sites are built upon. All sites share a common core of Javascript, HTML and CSS, while individual skin-files enable stylesheet customization according to brand.
+This document describes the overall design patterns of the Bonnier Publications Platform (BPP).
+
+The heart of BPP is custom CMS White Album built with Ruby on Rails, which forms the basis of core HTML and CSS that external developers can access through an api. White Album is a “white label” CMS that most Bonnier sites use. All sites share a common core of assets, while individual skin-files enable stylesheet customization according to brand.
 
 External partners may have different agendas and briefs, meanwhile, this guide targets projects that include extensions directly implemented into the platform and external projects that need visual coherence with a specific brand or the platform as a whole.
 
 ### Technical patterns
 
-The BP is build with [object oriented CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.
+BPP is build with [object oriented CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) (OOCSS) in mind. As with any object-based coding method, the purpose of OOCSS is to encourage code reuse and, ultimately, faster and more efficient stylesheets that are easier to add to and maintain.
 
-### File structure
-
-{% highlight html %}
-assets
-  |
-  |-- fonts
-  |-- images
-  |      |
-  |      |-- base
-  |      |-- site names (eg. costume)
-  |
-  |-- javascripts
-  |      |
-  |      |-- frontend.js
-  |      |-- modules
-  |      |-- components
-  |      |-- external
-  |      |-- plugins
-  |      |-- specific
-  |
-  |-- stylesheets
-         |
-         |-- global.css.scss
-         |-- global
-         |     |
-         |     |-- site
-         |     |    |
-         |     |    |-- modules
-         |     |    |      |
-         |     |    |      |-- _variables.css.scss
-         |     |    |      |-- _mixins.css.scss
-         |     |    |
-         |     |    |-- breakpoints
-         |     |    |       |
-         |     |    |       |-- _small.css.scss
-         |     |    |       |-- _medium.css.scss
-         |     |    |       |-- _large.css.scss
-         |     |    |
-         |     |    |-- partials
-         |     |    |
-         |     |    |-- base.css.scss
-         |     |
-         |     |-- [one for each sub-project]
-         |                    |
-         |                    |-- breakpoints
-         |                    |-- modules
-         |                    |-- partials
-         |                    |-- base.css.scss
-         |
-         |-- skins
-         |     |
-         |     |-- site names (eg. costume)
-         |     |       |
-         |     |       |-- modules
-         |     |       |      |
-         |     |       |      |-- _variables.css.scss
-         |     |       |
-         |     |       |-- partials
-         |     |       |-- breakpoints
-         |     |       |       |
-         |     |       |       |-- _small.css.scss
-         |     |       |       |-- _medium.css.scss
-         |     |       |       |-- _large.css.scss
-         |     |       |
-         |     |       |-- base.css.scss
-         |     |
-         |     |-- _variables.css.scss
-         |     |-- _vendors.css.scss
-         |
-         |-- _site_name.css.scss (eg. _costume.css.scss)
-{% endhighlight %}
+Furthermore, BPP aims to follow the [code guidelines and formatting](http://mdo.github.io/code-guide/) used by the Bootstrap community.
 
 ### Visual patterns
 
-BP is made fully responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
+BPP is responsive enabled by the [Bootstrap CSS-framework](http://getbootstrap.com/).
 
 The platform is designed with a full-width mindset where each row contains “one impression”. This approach entails alternating user attention on editorial content and ads leading to an enhanced user experience and improved quality of adverts. Yet, this approach also entails a need to guide users down the site in order to keep them interested.
 
@@ -96,30 +25,30 @@ Most of the Bonnier products have access to quality photo material, which is uti
 
 ### Header & footer
 
-The BP header and footer, which may be imported on external sites, consists of...
-A full width banner and optional side banners (horseshoe)
-The brand logo - as default it will be placed to the left
+The BPP header and footer, which may be imported on external sites, consists of...
 
+* A full width banner and optional side banners (horseshoe)
+* The brand logo
 * magazine subscription offer to the right
 * navigation menu with dropdown submenu
 * footer containing background information about the publisher and links to related sites
 
-### Header:
+#### Header:
 ![Horisontal Ordering](images/header.png)
 
-### Footer:
+#### Footer:
 ![Horisontal Ordering](images/footer.png)
 
-### Your area of control:
+#### Your area of control:
 ![Horisontal Ordering](images/areaofcontrol.jpg)
 
 ### Navigation
 
 The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.
 
-### Included in `<head>`
+### Included in head
 
-BP uses the HTML5 doctype:
+BPP uses HTML5 doctype:
 
 {% highlight html %}
   <!DOCTYPE html>
@@ -127,23 +56,27 @@ BP uses the HTML5 doctype:
 
 The `<head>` will further include :
 
+* WhiteAlbum CSS
 * Twitter Bootstrap
-* jQuery v. 1.10.2
 * Font Awesome
-* Relevant meta tags:
+* Useful meta tags:
 
 {% highlight html %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1;">
+<meta property="og:url" content="[site-url]" data-target="facebook-url">
+<meta property="og:site_name" content="[site-name]">
+<meta property="fb:app_id" content="[site-facebook-id]">
 {% endhighlight %}
+
+### CSS & MARKUP
 
 ### Bootstrap
 
-BP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
+BPP is based on the CSS-framework [Twitter Bootstrap](http://getbootstrap.com/). That provides a wide range of styles ready to use. Most significantly is the Mobile First responsive grid, which defines the overall structure of the platform.
 
-BP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
+BPP does not include unused Bootstrap components. For this reason, here is a complete list of sub-libraries included on the platform:
 
-* mixins
 * normalize
 * print
 * scaffolding
@@ -153,6 +86,7 @@ BP does not include unused Bootstrap components. For this reason, here is a comp
 * tables
 * forms
 * buttons
+* progress-bars
 * pagination
 * pager
 * labels
@@ -160,21 +94,22 @@ BP does not include unused Bootstrap components. For this reason, here is a comp
 * panels
 * component-animations
 * alerts
+* navbar
+* navs
+* dropdowns
 * utilities
 * responsive-utilities
 
-If you wish that other [bootstrap elements](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/bootstrap.scss) are made available to you, please let us know.
-
 ### Grid
 
-The BP platform uses the 12 column [responsive grid](http://getbootstrap.com/css/#grid) provided by Bootstrap.
+The BPP platform uses the 12 column [responsive grid](http://getbootstrap.com/css/#grid) provided by Bootstrap.
 
-The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). Currently that the large breakpoint still exists in our code base. We currently don't use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px.
+The grid has four general breakpoints: extra small (xs), small (sm), medium (md) and large (lg). The large breakpoint still exists in our code base though we currently don't use this, as we have to accommodate the specs from the current ad market. Horseshoe ads are still a popular media choice, because of this our websites have a maximum width of 960px (Denmark) and 980px (Norway).
 
 In most cases these breakpoints will be effectuated as follows:
 
 * xs:   smartphone
-* sm:   tablet portrait
+* sm:   tablet
 * md:   13” laptop
 * <s>lg:   desktop</s>
 
@@ -188,116 +123,54 @@ Button colors follow the overall site colors meaning that, for instance, the pri
 The Bootstrap buttons have been extended with a facebook styled button enabled by class `.btn-facebook` :
 
 {{ raw }}
-<button class="btn-facebook">Login med facebook</button>
+   <a href="#" class="btn-facebook"> Login med facebook </a>
 {{ endraw }}
 
 ### Forms
 Use Bootstrap’s form classes to style [forms](http://getbootstrap.com/css/#forms).
 
-Select the smallest height sizing class for input fields: `.input-sm`
-
 ### Alerts
 Bootstrap provides a collection of [alerts](http://getbootstrap.com/components/#alerts) for user feedback messages. By default, they follow the colors described in the [colors section](#colors).
 
 ### Icons
-[Font Awesome](http://fontawesome.io) is implemented on BP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.
+[Font Awesome](http://fontawesome.io) is implemented on BPP. Use this icon font whenever it makes sense and try to avoid images as they affect load times negatively. Also, using this font will ensure a consistent visual appearance.
 
-### CSS HELPERS
+### HELPERS
 
-### Headers and text
+### Headers
 
-Keep a clear hierarchy between different headers and text. In general each site has a primary font and a secondary font, these will be applied through the header- and text classes.
+Keep a clear hierarchy between different headers and text. In general, each site has a primary serif font and a primary sans-serif font, which are different from site to site. The fonts will be applied through the header- and text-classes.
 
 All font sizes are specified in pixels (not em or pt).
 
-Use the tags h1, h2, h3, p etc. semantically and add the following classes to style headers and text:
-
-**Headers:**
-
-{{ raw }}
-<h1 class="header-primary">Header-primary</h1>
-{{ endraw }}
-
-{% highlight css %}
-.header-primary
-{% endhighlight %}
-
-{% highlight html %}
-<h1 class="header-primary">Header-primary</h1>
-{% endhighlight %}
-
-{{ raw }}
-<h1 class="header-secondary">Header-secondary</h1>
-{{ endraw }}
-
-{% highlight css %}
-.header-secondary
-{% endhighlight %}
-
-{% highlight html %}
-<h1 class="header-secondary">Header-secondary</h1>
-{% endhighlight %}
-
-{{ raw }}
-<h1 class="header-tertiary">Header-tertiary</h1>
-{{ endraw }}
-
-{% highlight css %}
-.header-tertiary
-{% endhighlight %}
-
-{% highlight html %}
-<h1 class="header-tertiary">Header-tertiary</h1>
-{% endhighlight %}
-
-{{ raw }}
-<h1 class="header-quaternary">Header-quaternary</h1>
-{{ endraw }}
-
-{% highlight css %}
-.header-quaternary
-{% endhighlight %}
-
-{% highlight html %}
-<h1 class="header-quaternary">Header-quaternary</h1>
-{% endhighlight %}
+Use the tags h1, h2, h3, p etc. semantically and add the equivalent classes to style headers and text. Eg. Apply `<h1>` styles with `.h1` . This is useful if semantics and styling should be separated.
 
 Example:
 
 {% highlight html %}
-<h1 class=”header-primary”>A primary headline</h1>
+<h1 class="h1">A primary headline</h1>
 <p>Some text</p>
-<h2 class=”header-primary”>A semantically secondary headline, that visually looks the same as a primary headline</h2>
+<h2 class=".h1">A semantically secondary headline, that visually looks the same as a primary headline</h2>
 {% endhighlight %}
 
-**Text:**
+### Text
+
+Use the following classes to achieve different styling of `<p>` tags:
 
 {{ raw }}
-<p class="text">Text</p>
+<p class="text-small gutter-top-lg">Text-small</p>
 {{ endraw }}
 
 {% highlight css %}
-.text
+.text-small
 {% endhighlight %}
 
 {% highlight html %}
-<p class="text">Text</p>
+<p class="text-small">Text-small</p>
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-distinct">Text-distinct</p>
-{{ endraw }}
-
-{% highlight css %}
-.text-distinct
-{% endhighlight %}
-
-{% highlight html %}
-<p class="text-distinct">Text-distinct</p>
-{% endhighlight %}
-
-{{ raw }}
-<p class="text-tiny">Text-tiny</p>
+<p class="text-tiny gutter-top-lg">Text-tiny</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -309,7 +182,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-note">Text-note</p>
+<p class="text-note gutter-top-lg">Text-note</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -321,7 +194,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-muted">Text-muted</p>
+<p class="text-muted gutter-top-lg">Text-muted</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -333,7 +206,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-thin">Text-thin</p>
+<p class="text-thin gutter-top-lg">Text-thin</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -345,7 +218,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-normal">Text-normal</p>
+<p class="text-normal gutter-top-lg">Text-normal</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -357,7 +230,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-bold">Text-bold</p>
+<p class="text-bold gutter-top-lg">Text-bold</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -369,7 +242,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-uppercase">Text-uppercase</p>
+<p class="text-uppercase gutter-top-lg">Text-uppercase</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -381,7 +254,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-italic">Text-italic</p>
+<p class="text-italic gutter-top-lg">Text-italic</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -393,7 +266,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="text-white">Text-white</p>
+<p class="text-white gutter-top-lg">Text-white</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -405,7 +278,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="reset-lineheight">Reset-lineheight</p>
+<p class="reset-lineheight gutter-top-lg">Reset-lineheight</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -417,7 +290,7 @@ Example:
 {% endhighlight %}
 
 {{ raw }}
-<p class="reset-text-color">Reset-text-color</p>
+<p class="reset-text-color gutter-top-lg">Reset-text-color</p>
 {{ endraw }}
 
 {% highlight css %}
@@ -428,9 +301,10 @@ Example:
 <p class="reset-text-color">Reset-text-color</p>
 {% endhighlight %}
 
-**Wysiwyg:**
 
-For wysiwyg generated text, wrap the content inside class `.wysiwyg`
+### Wysiwyg
+
+For wysiwyg generated text, wrap the content inside `.wysiwyg`
 
 {% highlight html %}
 <div class="wysiwyg">
@@ -471,18 +345,18 @@ Links, buttons, alerts etc. will have the appropriate colors applied by default.
 {% endhighlight %}
 
 {{ raw }}
-<div class="brand-color-bg">
-A container with the brand color as background
+<div class="brand-color-bg gutter-top-lg" style="padding: 10px 20px;">
+<div class="h3 text-white">A container with the brand color as background</div>
 </div>
 {{ endraw }}
 
-#### Widgets
+### Widgets
 
-Widgets form a central part on the BP platform as modules that can be placed around the site and on front pages.
+Widgets form a central part on the BPP platform as modules that can be placed around the site and on front pages.
 
 Widgets should be designed to span the full width of the site layout in order to follow the overall design pattern.
 
-`.widget` use this class on the parent of all widgets of the site - adds a container and a (white) background-color to the element.
+use `.widget` on the parent of all widgets of the site, which adds a container and a (white) background-color to the element.
 
 {% highlight html %}
 <div class="widget">
@@ -494,38 +368,24 @@ Widgets should be designed to span the full width of the site layout in order to
 </div>
 {% endhighlight %}
 
-### Badges
-Use the `.advertorial-stamp` class to add an advertorial badge on, for instance, the article lead image:
+### Labels
+Use `.content-label` on widget thumbnails and lead images if needed. The background-color and text can be changed to whatever is appropriate for the specific label. However, the placement must always be at the top in order to comply with Norwegian legislation.
 
 {{ raw }}
 <div class="relative gutter-bottom">
-  <div class="advertorial-stamp">Badge</div>
+  <div class="content-label">ANNONCE</div>
   <img src='http://placehold.it/640x450'>
 </div>
 {{ endraw }}
 
 {% highlight html %}
-<div class="bounding-box">
-  <div class="advertorial-stamp">ANNONCE</div>
+<div class="relative">
+  <div class="content-label">ANNONCE</div>
   <img src="image.jpg" alt="image name">
 </div>
 {% endhighlight %}
 
-#### Bootstrap related
-
-These classes group Bootstrap’s responsive hidden-classes:
-
-{% highlight css %}
-.hidden-xs-sm
-.visible-xs-sm
-.hidden-md-lg
-.visible-md-lg
-.hidden
-{% endhighlight %}
-
-Use them like Bootstrap’s [responsive utilities](http://getbootstrap.com/css/#responsive-utilities)
-
-#### Gutters
+### Gutters
 
 Use these gutter classes to add spacing between elements or to reset margin and padding on elements:
 
@@ -540,7 +400,6 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 .reset-padding //reset all padding
 .reset-padding-left //reset left padding
 .reset-padding-right //reset right padding
-
 
 /* vertical */
 .gutter-vertical //add gutters top and bottom
@@ -565,14 +424,16 @@ Use these gutter classes to add spacing between elements or to reset margin and 
 .gutter-right //add gutter right
 {% endhighlight %}
 
-Example:
+#### Example:
 
 {{ raw }}
-<h2 class="header-tertiary gutter-reset">
-  A header without margin or padding
-</h2>
-<div class="gutter-top-lg">
-  Content with a large margin to the header above
+<div style="border: 1px solid black; padding: 10px;" class="gutter-bottom">
+  <h2 class="header-tertiary gutter-reset">
+    A header without margin or padding
+  </h2>
+  <div class="gutter-top-lg">
+    Content with a large margin to the header above
+  </div>
 </div>
 {{ endraw }}
 
@@ -585,40 +446,21 @@ Example:
 </div>
 {% endhighlight %}
 
+### Visibility
 
-### Newspaper helper
+These classes group Bootstrap’s responsive hidden-classes:
 
-Use this helper when you want content to be shown in columns. It automaticly justifies the content in each column.
-Set you rows to be 1, 2 or 3 - it will automaticly go full width on mobile. Width for columns is 200px, so if your div is less than the value for all columns it will choose the next colum number.
-
-Example:
-
-{{ raw }}
-<div class="newspaper col-2">
-  Semiotics irony Pinterest, plaid cornhole selfies post-ironic tousled chambray. Synth pop-up Cosby sweater, messenger bag ennui biodiesel letterpress leggings Williamsburg mumblecore paleo scenester. Flexitarian quinoa pickled meggings hoodie typewriter.
-</div>
-{{ endraw }}
-
-Markup: use col-1, col-2 or col-3
-
-{% highlight html %}
-<div class="newspaper col-1">
-  ...
-</div>
-
-<div class="newspaper col-2">
-  ...
-</div>
-
-<div class="newspaper col-3">
-  ...
-</div>
+{% highlight css %}
+.hidden-xs-sm
+.visible-xs-sm
+.hidden-md-lg
+.visible-md-lg
+.hidden
 {% endhighlight %}
 
+Use them like Bootstrap’s [responsive utilities](http://getbootstrap.com/css/#responsive-utilities)
 
-#### Misc helpers
-
-Simple helper classes that do what the title says:
+### Micro helpers
 
 {% highlight css %}
 /* Widths */
@@ -642,139 +484,37 @@ Simple helper classes that do what the title says:
 .block
 .inline
 .inline-block
-.bp-hide /* This is a temporary name, until we update to Bootstrap 3.0.1 */
+.bp-hide // This is a temporary name, until we update Boostrap
 
-/* Misc */
+/* Additional */
 .hide-background
 .pointer
-.horizontal-scroll
-.ellipsis
 .vertical-align-top
 .vertical-align-middle
 .vertical-align-bottom
 {% endhighlight %}
 
-### JavaScript
+### Misc helpers
 
-BP uses jQuery v. 1.10.2 as the primary Javascript library. However, all functions are wrapped inside jQuery functions, so in case an external developer wishes to use another library, he can safely do so. Let us know if you experience any problems with this.
+{% highlight css %}
+/* Vertical centering using flexbox */
+.middle
 
-Scripts on the platform are minified and delivered through Rails 4's asset pipeline meaning that all scripts are available anywhere and don't need specific loading. However, this also entails that functions should be run only where they are needed by checking if the relevant DOM element is present.
+/* Apply to wrapper with a nested class named .inner to create horizontal scroll effect */
+.horizontal-scroll
 
-Example:
+ /* Add to text-container with set width to create ellipsis cutoff */
+.ellipsis
 
-{% highlight javascript %}
-if($('[data-component="element"]').length) {
-  runFunction();
-}
+ /* Add on image to make it grayscale */
+.grayscale
+
 {% endhighlight %}
 
-#### Data attributes
-BP JavaScript follows the patterns introduced by the Bootstrap community where DOM objects are interfaced through data-attrtibutes instead of classes and ids. This makes the relationship between scripts and markup more transparent.
+### Caveats
 
-**Example:**
+White Album uses the OOCSS approach, but also has customized modules that fills up the global name space. Therefore, be careful not to overwrite any of the following modules (and related sub modules):
 
-Markup:
+`.banner` `.horseshoe` `.takerover` `.gallery` `.article` `.blog` `.category` `.contestants` `.category` `.footer` `.logo` `.nav` `.navbar` `.search` `.sticky-menu` `.page` `.permission` `.polls` `.quiz` `.abo-offer` `.calendar` `.content-in-rows` `.fact-box` `.filtered-search` `.full-width-content` `.widget` `.linklist` `.media` `.video` `.mobile` `.newsletter-signup` `.rotator` `.social-share` `.standard` `.themebox` `.wg`
 
-{% highlight html %}
-  <button data-toggle="button">Button</button>
-{% endhighlight %}
-
-Javascript:
-
-{% highlight javascript %}
-$('[data-toggle="button"]').on('click', doSomething);
-{% endhighlight %}
-
-####Plugins
-
-BP uses internal jQuery plugins to interface reusable scripts. External developers are welcome to use these plugins or beware of the namespace they occupy.
-
-**$.checkRegex**
-
-Simple frontend regex script that returns true or false. Use it like this: `$.checkRegex(stringToCheck, 'pattern');`
-
-Available patterns: numberIncluded, onlyNumbers, onlyLetters, hasLetters, isEmail, isImage, onlySpaces
-
-**$.breakpoints**
-
-Checks the window width and returns the breakpoint as a string `xs`, `sm`, `md`, `lg`. Use it as it is, e.g.:
-
-{% highlight javascript %}
-if($.breakpoint() === 'md') {
-  doSomething();
-}
-{% endhighlight %}
-
-**$.isTouchDevice**
-
-Detects if the site is accessed with a touch device. Returns true/false
-
-**$.extractSuffix**
-
-Splits a filename and returns the suffix as a string. For instance: `$.extractSuffix('image.png')` returns `png`.
-
-####Testing
-
-All plugins are unit tested with [Jasmine.js](http://jasmine.github.io/2.0/introduction.html). The testing suite is only available internally, but we strongly encourage external developers to unit test scripts.
-
-####Components
-
-BP extends Bootstrap's JavaScript components with a suite of features that can be initialized using data-attributes:
-
-**Image rotator**
-
-Easily create an image rotator by adding `data-component="rotator"` to a set of images with the following structure:
-
-{% highlight html%}
-  <div data-component="rotator">
-    <ul>
-      <li>
-        <figure>
-          <figcaption>
-          </figcaption>
-        </figure>
-      </li>
-    </ul>
-  </div>
-{% endhighlight %}
-
-**Modal image**
-
-Toggle a large version of any image to open in a modal. Initiate with `data-toggle="modal-image"`and provide a path to the the large scale image in `data-image-lg="image-url">`
-
-Example:
-
-{% highlight html %}
-<img src="image.jpg" data-toggle="modal-image" data-image-lg="image-large.jpg">
-{% endhighlight %}
-
-**Simple form validation**
-
-The simple form validation component is, as the title indicates, useful to validate small and simple forms. To use it, add `data-regex`with a pattern (see list below) and `data-error-msg` with an error message to the input field that needs checked. On the submit button add `data-toggle="check-regex"`, and on the same DOM-level place a container with `data-toggle="alert-danger"` to hold the error messages:
-
-Example:
-
-{% highlight html %}
-<form>
-  <input
-    placeholder="Telefonnummer"
-    data-regex="phone"
-    data-error-msg="Skal indeholde otte tal uden mellemrum">
-  <div class="alert alert-danger" data-toggle="alert-danger"></div>
-  <input type="submit" value="Submit" data-toggle="check-regex">
-</form>
-{% endhighlight %}
-
-Available patterns:
-
-`data-regex="phone"`: Checks if the input is a number of 8 digits without spaces
-
-`data-regex="name"`: Checks if the input only has letters
-
-`data-regex="email"`: Checks if the input is an email address
-
-`data-regex="is-adult"`: Checks the difference between the current year (2014) and the input year (e.g. 1984) and whether it's more than 18 years ago
-
-**Tooltip**
-
-Initializes Bootstrap's Tooltip plugin `$('[data-toggle="tooltip"]').tooltip();`
+We motivate external partners to namespace all custom CSS with an app-specific prefix to avoid clashes `.app-classname`
