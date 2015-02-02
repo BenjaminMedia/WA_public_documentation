@@ -23,9 +23,52 @@ The platform is designed with a full-width mindset where each row contains “on
 
 Most of the Bonnier products have access to quality photo material, which is utilized both off- and online. The web site visuals aim to support these images with limited color schemes and unpretentious graphics that do not steal attention from the content. This approach fits well into the content-centric web design trends that focuses on minimalism and simplicity.
 
+### API
+
+The API-response includes header and footer HTML, a stylesheet link tag and a JavaScript tag. Call `full` or `partial` to either get a full set of styles and scripts from WA or just the most necessary assets needed for the header and footer to work. Ask your local Bonnier developer to get API access.
+
+The API-response will include:
+
+* Header HTML
+* Footer HTML
+* CSS link tag to include WhiteAlbum styles
+* JavaScript tag to include WhiteAlbum banner JavaScript (depends on jQuery) and Bootstrap scripts
+
+Full:
+
+* CSS: imports all styling from WA
+* JS: imports banner script and all Bootstrap scripts
+
+Partial:
+
+* CSS: only imports styles necessary for the header. This includes vendors (Bootstrap + FontAwesome), fonts and skin styling, but not template specific styling
+* JS: imports banner script and Bootstrap collapse script (necessary for the menu to work)
+
+
+### Loading banners
+
+The JavaScript tag included in the API-response will load a script for inserting banners. Place banners using the following markup where `data-banner-code="XXXX"` is the content unit of the related campaign:
+
+{% highlight html %}
+  <!-- Banners visible on desktops -->
+  <div class="banner visible-md-lg" data-banner-md-lg>
+      <div data-banner-code="31404" data-banner-target></div>
+  </div>
+  <!-- Banners visible on tablets -->
+  <div class="banner visible-sm" data-banner-sm>
+      <div data-banner-code="31417" data-banner-target></div>
+  </div>
+  <!-- Banners visible on mobiles -->
+  <div class="banner visible-xs" data-banner-xs>
+      <div data-banner-code="31412" data-banner-target></div>
+  </div>
+{% endhighlight %}
+
+You can insert any content unit you want in the banner-code attribute.
+
 ### Header & footer
 
-The BPP header and footer, which may be imported on external sites, consists of...
+The BPP header and footer HTML contains:
 
 * A full width banner and optional side banners (horseshoe)
 * The brand logo
@@ -46,28 +89,6 @@ The BPP header and footer, which may be imported on external sites, consists of.
 
 The navigation menu has drop downs to display sub pages of each section. On small displays, the menu will collapse into a button icon, which can be triggered to display a fold out menu instead.
 
-### Included in head
-
-BPP uses HTML5 doctype:
-
-{% highlight html %}
-  <!DOCTYPE html>
-{% endhighlight %}
-
-The `<head>` will further include :
-
-* WhiteAlbum CSS
-* Twitter Bootstrap
-* Font Awesome
-* Useful meta tags:
-
-{% highlight html %}
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1;">
-<meta property="og:url" content="[site-url]" data-target="facebook-url">
-<meta property="og:site_name" content="[site-name]">
-<meta property="fb:app_id" content="[site-facebook-id]">
-{% endhighlight %}
 
 ### CSS & MARKUP
 
