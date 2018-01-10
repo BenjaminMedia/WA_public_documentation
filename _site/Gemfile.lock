@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     RedCloth (4.2.9)
-    activesupport (4.1.4)
+    activesupport (4.1.11)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -89,11 +89,11 @@ GEM
       rb-inotify (>= 0.9)
     maruku (0.7.0)
     mercenary (0.3.5)
-    mini_portile (0.6.0)
+    mini_portile (2.3.0)
     minitest (5.4.2)
     net-dns (0.8.0)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.9)
